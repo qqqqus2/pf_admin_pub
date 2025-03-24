@@ -285,7 +285,7 @@ export const pubRouter = [
         depth1: "파트너/시설관리",
         depth2: "파트너관리",
         depth3: "계약상세/배정자관리/목록",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO031023",
@@ -293,7 +293,7 @@ export const pubRouter = [
         depth1: "파트너/시설관리",
         depth2: "파트너관리",
         depth3: "계약상세/주차장등록관리/조회",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO033001",
@@ -301,7 +301,7 @@ export const pubRouter = [
         depth1: "파트너/시설관리",
         depth2: "배정자공유현황관리",
         depth3: "배정자공유현황관리 목록",
-        status: "",
+        status: "완료",
     },
 
     {
@@ -310,7 +310,7 @@ export const pubRouter = [
         depth1: "파트너/시설관리",
         depth2: "시설관리",
         depth3: "",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/drawer03",
@@ -318,7 +318,7 @@ export const pubRouter = [
         depth1: "파트너/시설관리",
         depth2: "Drawer & Modal",
         depth3: "",
-        status: "",
+        status: "완료",
     },
     // 04 전시컨텐츠관리
     {

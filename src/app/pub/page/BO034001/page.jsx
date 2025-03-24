@@ -23,7 +23,7 @@ export default function BO034001() {
                     { text: "AloT 센서", url: "/" },
                 ]}
             />
-            <div className="box-cont">
+            <div className="box-cont overflow-hidden">
                 <TabGroup className="tab-basic">
                     <TabList>
                         <Tab>AloT 센서</Tab>
@@ -33,11 +33,11 @@ export default function BO034001() {
                         <Tab>안내판</Tab>
                         <Tab>기타장비</Tab>
                     </TabList>
-                    <TabPanels>
+                    <TabPanels className={"overflow-y-auto overflow-x-hidden"}>
                         <TabPanel>
-                            <div className="grow flex flex-col space-y-8">
+                            <div className="grow flex flex-col ">
                                 {/* search box */}
-                                <div className="search-box">
+                                <div className="search-box relative">
                                     <ul>
                                         <li>
                                             <p>상태</p>
@@ -114,7 +114,7 @@ export default function BO034001() {
                                             </div>
                                         </li>
                                     </ul>
-                                    <div className="search-btn">
+                                    <div className="search-btn absolute right-0 bottom-6 mt-0">
                                         <Button type="green" size="m">
                                             검색
                                         </Button>
@@ -122,31 +122,37 @@ export default function BO034001() {
                                 </div>
                                 {/* //search box */}
 
-                                <div className="grow flex flex-col">
-                                    <div className="flex justify-between items-center">
+                                <div className="grow flex flex-col mt-6">
+                                    <div className="flex justify-between items-center mb-2">
                                         <div className="flex items-center gap-3">
                                             <Button type="outline" size="m">
-                                                선택삭제
-                                            </Button>
-                                            <Button type="outline" size="m">
-                                                일괄삭제
-                                            </Button>
-                                            <Button type="outline" size="m">
-                                                일괄등록
+                                                폐기상태 전환
                                             </Button>
                                         </div>
                                         <Button type="black" size="m">
                                             등록
                                         </Button>
                                     </div>
-                                    <div className="flex items-center min-h-[2.5rem] mt-4">
-                                        <p className="h4">
-                                            총{" "}
-                                            <span className="text-green">
-                                                231
-                                            </span>
-                                            건
-                                        </p>
+                                    <div className="flex items-center min-h-[2.5rem] ">
+                                        <div className="flex items-center min-h-[2.5rem]">
+                                            <p className="h4">
+                                                총{" "}
+                                                <span className="text-green">
+                                                    231
+                                                </span>
+                                                건
+                                            </p>
+                                            <div className="ml-4">
+                                                <Button
+                                                    type="outline"
+                                                    size="m"
+                                                    className="justify-self-end"
+                                                >
+                                                    <IcExcel />
+                                                    엑셀다운로드
+                                                </Button>
+                                            </div>
+                                        </div>
                                         <div className="flex items-center gap-2 ml-auto">
                                             <SelectBasic
                                                 placeholder="최근 등록순"
@@ -285,14 +291,6 @@ export default function BO034001() {
                                     </div>
                                     <div className="table-bottom">
                                         <Paging />
-                                        <Button
-                                            type="outline"
-                                            size="m"
-                                            className="justify-self-end"
-                                        >
-                                            <IcExcel />
-                                            엑셀 다운로드
-                                        </Button>
                                     </div>
                                 </div>
                             </div>

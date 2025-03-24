@@ -18,13 +18,11 @@ export default function BO031017() {
                 title="계약상세 (강남구청)"
                 path={[
                     { text: "홈", url: "/" },
-                    { text: "파트너 · 시설관리", url: "/" },
+                    { text: "파트너/시설관리", url: "/" },
                     { text: "파트너관리", url: "/" },
-                    { text: "계약상세", url: "/" },
-                    { text: "배정자관리", url: "/" },
                 ]}
             />
-            <div className="box-cont">
+            <div className="box-cont overflow-hidden">
                 <TabGroup className="tab-basic h-full" defaultIndex={3}>
                     <TabList>
                         <Tab>계약조회</Tab>
@@ -32,27 +30,36 @@ export default function BO031017() {
                         <Tab>주차장등록관리</Tab>
                         <Tab>배정자관리</Tab>
                     </TabList>
-                    <TabPanels>
+                    <TabPanels className={"overflow-y-auto overflow-x-hidden"}>
                         <TabPanel>계약조회</TabPanel>
                         <TabPanel>파트너계정관리</TabPanel>
                         <TabPanel>주차장등록관리</TabPanel>
                         <TabPanel>
                             {/* search box */}
-                            <div className="search-box">
+                            <div className="search-box relative">
                                 <ul>
-                                    <li className="col-span-2">
-                                        <p>상태</p>
+                                    <li className="">
+                                        <p>계정상태</p>
+                                        <div className="flex items-center gap-3">
+                                            <Checkbox
+                                                label="전체"
+                                                defaultChecked
+                                            />
+                                            <Checkbox label="활성" />
+                                            <Checkbox label="비활성" />
+                                            <Checkbox label="정지" />
+                                        </div>
+                                    </li>
+                                    <li className="">
+                                        <p>검토여부</p>
                                         <div className="flex items-center gap-3">
                                             <Radio
                                                 name="f1"
                                                 label="전체"
                                                 defaultChecked
                                             />
-                                            <Radio name="f1" label="활성(Y)" />
-                                            <Radio
-                                                name="f1"
-                                                label="비활성(N)"
-                                            />
+                                            <Radio name="f1" label="Y" />
+                                            <Radio name="f1" label="N" />
                                         </div>
                                     </li>
                                     <li className="col-span-2">
@@ -80,7 +87,7 @@ export default function BO031017() {
                                         </div>
                                     </li>
                                 </ul>
-                                <div className="search-btn">
+                                <div className="search-btn absolute right-0 bottom-6 mt-0">
                                     <Button type="green" size="m">
                                         검색
                                     </Button>
@@ -89,33 +96,30 @@ export default function BO031017() {
                             {/* //search box */}
 
                             <div className="grow flex flex-col mt-6">
-                                <div className="flex items-center">
-                                    <Button
-                                        type="black"
-                                        size="m"
-                                        className="ml-auto"
-                                    >
-                                        배정자등록
-                                    </Button>
-                                </div>
-                                <div className="flex items-center min-h-[2.5rem] mt-4">
-                                    <p className="h4">
-                                        총{" "}
-                                        <span className="text-green">231</span>
-                                        건
-                                    </p>
+                                <div className="flex items-center min-h-[2.5rem]">
+                                    <div className="flex items-center min-h-[2.5rem]">
+                                        <p className="h4">
+                                            총{" "}
+                                            <span className="text-green">
+                                                231
+                                            </span>
+                                            건
+                                        </p>
+                                        <div className="ml-4">
+                                            <Button
+                                                type="outline"
+                                                size="m"
+                                                className="justify-self-end"
+                                            >
+                                                <IcExcel />
+                                                엑셀다운로드
+                                            </Button>
+                                        </div>
+                                    </div>
                                     <div className="flex items-center ml-auto">
                                         <Button type="outline" size="m">
                                             <IcExcel />
-                                            공유 포인트 지급
-                                        </Button>
-                                        <Button
-                                            type="outline"
-                                            size="m"
-                                            className="ml-2"
-                                        >
-                                            <IcExcel />
-                                            배정자 일괄등록
+                                            공유포인트 지급
                                         </Button>
                                         <SelectBasic
                                             placeholder="50개씩 보기"
@@ -127,72 +131,49 @@ export default function BO031017() {
                                     <table>
                                         <colgroup>
                                             <col width="60px" />
-                                            <col width="60px" />
+                                            <col width="auto" />
+                                            <col width="auto" />
+                                            <col width="auto" />
+                                            <col width="12%" />
+                                            <col width="8%" />
+                                            <col width="8%" />
+                                            <col width="8%" />
+                                            <col width="140px" />
+                                            <col width="140px" />
+                                            <col width="180px" />
+                                            <col width="180px" />
                                         </colgroup>
                                         <thead>
                                             <tr>
-                                                <th scope="col">
-                                                    <Checkbox />
-                                                </th>
-                                                <th scope="col">번호</th>
+                                                <th scope="col">No</th>
                                                 <th scope="col">회원번호</th>
-                                                <th scope="col">활성화 여부</th>
+                                                <th scope="col">계정상태</th>
+                                                <th scope="col">검토여부</th>
                                                 <th scope="col">주차장명</th>
                                                 <th scope="col">배정자명</th>
-                                                <th scope="col">차량번호</th>
+                                                <th scope="col">자량번호</th>
                                                 <th scope="col">휴대폰번호</th>
                                                 <th scope="col">배정시작일</th>
                                                 <th scope="col">배정종료일</th>
-                                                <th scope="col">공유시간</th>
-                                                <th scope="col">등록자</th>
-                                                <th scope="col">등록일시</th>
-                                                <th scope="col">최종수정자</th>
                                                 <th scope="col">
-                                                    최종수정일시
+                                                    배정자 전환일시
                                                 </th>
+                                                <th scope="col">공유시간</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>
-                                                    <Checkbox />
+                                                <td colspan="12">
+                                                    <p className="no-data py-8 h-full">
+                                                        등록된 정보가 없습니다.
+                                                    </p>
                                                 </td>
-                                                <td>10</td>
-                                                <td>NNNNNN</td>
-                                                <td>Y</td>
-                                                <td>
-                                                    구획3-88-0&#40;#11111&#40;
-                                                </td>
-                                                <td>
-                                                    <button type="button">
-                                                        <span className="underline">
-                                                            김길동
-                                                        </span>
-                                                    </button>
-                                                </td>
-                                                <td>22도9382</td>
-                                                <td>0102362514</td>
-                                                <td>yyyy-mm-dd 00:00</td>
-                                                <td>yyyy-mm-dd 00:00</td>
-                                                <td>00시간00분</td>
-                                                <td>강남&#40;kangnam&#41;</td>
-                                                <td>yyyy-mm-dd 00:00</td>
-                                                <td>-</td>
-                                                <td>-</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                                 <div className="table-bottom">
                                     <Paging />
-                                    <Button
-                                        type="outline"
-                                        size="m"
-                                        className="justify-self-end"
-                                    >
-                                        <IcExcel />
-                                        배정자 엑셀 다운로드
-                                    </Button>
                                 </div>
                             </div>
                         </TabPanel>

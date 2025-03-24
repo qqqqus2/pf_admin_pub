@@ -118,8 +118,8 @@ export default function BO033001() {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>10</td>
-                                    <td>거주자엑셀당일</td>
+                                    <td>306</td>
+                                    <td>서초구청</td>
                                     <td>8346</td>
                                     <td>
                                         <button type="button">
@@ -128,7 +128,7 @@ export default function BO033001() {
                                             </span>
                                         </button>
                                     </td>
-                                    <td>거주자엑셀당일구획</td>
+                                    <td>구획4번</td>
                                     <td>22도9382</td>
                                     <td>0102362514</td>
                                     <td>yyyy-mm-dd 00:00</td>
@@ -137,6 +137,21 @@ export default function BO033001() {
                                     <td>00시간00분</td>
                                     <td>0</td>
                                     <td>90,000</td>
+                                </tr>
+                                <tr class="bg-cell-red">
+                                    <td className=""></td>
+                                    <td className=""></td>
+                                    <td className=""></td>
+                                    <td className=""></td>
+                                    <td className=""></td>
+                                    <td className=""></td>
+                                    <td className=""></td>
+                                    <td className=""></td>
+                                    <td className=""></td>
+                                    <td className="">288시간45분</td>
+                                    <td className="">00시간19분</td>
+                                    <td className="">13,500</td>
+                                    <td className="">420,000</td>
                                 </tr>
                             </tbody>
                         </table>

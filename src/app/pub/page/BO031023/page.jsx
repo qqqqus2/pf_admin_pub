@@ -31,7 +31,7 @@ export default function BO031023() {
                     { text: "주차등록관리", url: "/" },
                 ]}
             />
-            <div className="box-cont">
+            <div className="box-cont overflow-hidden">
                 <TabGroup className="tab-basic" defaultIndex={2}>
                     <TabList>
                         <Tab>계약조회</Tab>
@@ -39,7 +39,7 @@ export default function BO031023() {
                         <Tab>주차장등록관리</Tab>
                         <Tab>배정자관리</Tab>
                     </TabList>
-                    <TabPanels>
+                    <TabPanels className={"overflow-y-auto overflow-x-hidden"}>
                         {/* 계약조회 */}
                         <TabPanel>계약조회</TabPanel>
                         {/* 파트너계정관리 */}
@@ -1465,11 +1465,8 @@ export default function BO031023() {
                     목록
                 </Button>
                 <div className="flex items-center gap-2 ml-auto">
-                    <Button type="black" size="m">
-                        취소
-                    </Button>
                     <Button type="gray" size="m">
-                        미리보기
+                        취소
                     </Button>
                     <Button type="green" size="m">
                         저장
