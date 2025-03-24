@@ -6,22 +6,19 @@ import React from "react";
 //   className?: string;
 // }
 
-export default function Checkbox({
-  size,
-  label,
-  className,
-  ...props
-}//: CheckProps
+export default function Checkbox(
+    { size, label, className, ...props } //: CheckProps
 ) {
-  return (
-    <label
-      className={`form-check${size ? " size-s" : ""} ${
-        className ? className : ""
-      }`}
-    >
-      <input type="checkbox" className="hidden" {...props} />
-      <span className="icon"></span>
-      {label && <span className="label">{label}</span>}
-    </label>
-  );
+    return (
+        // <label
+        //   className={`form-check ${size ? " size-s" : ""} ${
+        //     className ? className : ""
+        //   }`}
+        // >
+        <label className={`form-check size-s ${className ? className : ""}`}>
+            <input type="checkbox" className="hidden" {...props} />
+            <span className="icon"></span>
+            {label && <span className="label">{label}</span>}
+        </label>
+    );
 }

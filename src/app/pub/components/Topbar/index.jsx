@@ -18,15 +18,18 @@ export default function Topbar({
     title,
     tip,
     path = [{ text: "홈", url: "/" }],
-}) // : TopbarProps
-{
+}) {
+    // : TopbarProps
     const [bm, setBm] = useState(checked);
 
     return (
         <div className="topbar">
             <div className="title-box">
-                <button onClick={() => setBm((prev) => !prev)}>
+                {/* <button onClick={() => setBm((prev) => !prev)}>
                     {bm ? <IcStarOn /> : <IcStarOff />}
+                </button> */}
+                <button>
+                    <IcStarOn />
                 </button>
                 <span className="h3">{title}</span>
                 {tip ? (

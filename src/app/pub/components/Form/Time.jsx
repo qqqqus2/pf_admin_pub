@@ -8,29 +8,28 @@ import { ko } from "date-fns/locale";
 //   size?: "m";
 // }
 
-export default function FormTime({ size, ...props }
-  // : TimeProps
+export default function FormTime({ size, ...props }) {
+    // : TimeProps
 
-) {
-  const [startDate, setStartDate] = useState(new Date());
+    const [startDate, setStartDate] = useState(new Date());
 
-  return (
-    <DatePicker
-      locale={ko}
-      selected={startDate}
-      onChange={(date) => {
-        if (date !== null) {
-          setStartDate(date);
-        }
-      }}
-      wrapperClassName={`form-date time${size ? " size-m" : ""}`}
-      enableTabLoop={false}
-      showTimeSelect
-      showTimeSelectOnly
-      timeIntervals={15}
-      timeCaption="Time"
-      dateFormat="aa hh:mm"
-      {...props}
-    />
-  );
+    return (
+        <DatePicker
+            locale={ko}
+            selected={startDate}
+            onChange={(date) => {
+                if (date !== null) {
+                    setStartDate(date);
+                }
+            }}
+            wrapperClassName={`form-date time ${size ? ` size-${size}` : ""}`}
+            enableTabLoop={false}
+            showTimeSelect
+            showTimeSelectOnly
+            timeIntervals={15}
+            timeCaption="Time"
+            dateFormat="aa hh:mm"
+            {...props}
+        />
+    );
 }

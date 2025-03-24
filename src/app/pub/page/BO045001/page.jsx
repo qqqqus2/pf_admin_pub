@@ -31,27 +31,19 @@ export default function BO045001() {
                         <li>
                             <p>대상</p>
                             <div className="flex items-center gap-3">
-                                <Checkbox
-                                    label="전체"
-                                    size="s"
-                                    defaultChecked
-                                />
-                                <Checkbox label="회원" size="s" />
-                                <Checkbox label="파트너" size="s" />
-                                <Checkbox label="관리자" size="s" />
+                                <Checkbox label="전체" defaultChecked />
+                                <Checkbox label="회원" />
+                                <Checkbox label="파트너" />
+                                <Checkbox label="관리자" />
                             </div>
                         </li>
                         <li>
                             <p>게시상태</p>
                             <div className="flex items-center gap-3">
-                                <Checkbox
-                                    label="전체"
-                                    size="s"
-                                    defaultChecked
-                                />
-                                <Checkbox label="게시중" size="s" />
-                                <Checkbox label="종료" size="s" />
-                                <Checkbox label="예정" size="s" />
+                                <Checkbox label="전체" defaultChecked />
+                                <Checkbox label="게시중" />
+                                <Checkbox label="종료" />
+                                <Checkbox label="예정" />
                             </div>
                         </li>
                         <li className="col-span-2">

@@ -29,14 +29,9 @@ export default function BO083001() {
                         <li className="col-span-2">
                             <p>사용여부</p>
                             <div className="flex items-center gap-3">
-                                <Radio
-                                    name="f1"
-                                    label="전체"
-                                    size="s"
-                                    defaultChecked
-                                />
-                                <Radio name="f1" size="s" label="사용(Y)" />
-                                <Radio name="f1" size="s" label="사용안함(N)" />
+                                <Radio name="f1" label="전체" defaultChecked />
+                                <Radio name="f1" label="사용(Y)" />
+                                <Radio name="f1" label="사용안함(N)" />
                             </div>
                         </li>
                         <li className="col-span-2">

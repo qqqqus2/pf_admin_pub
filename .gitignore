@@ -1,1 +1,7 @@
 node_modules
+
+# Next.js 관련
+/.next/
+/.next/server/
+/.next/cache/
+/.next/webpack/

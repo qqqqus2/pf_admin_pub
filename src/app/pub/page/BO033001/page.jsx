@@ -11,143 +11,141 @@ import FormDateRange from "@pub/components/Form/DateRange";
 import IcExcel from "@/assets/icons/ico_excel.svg";
 
 export default function BO033001() {
-  return (
-    <DefaultLayout>
-      <Topbar
-        title="배정자관리"
-        path={[
-          { text: "홈", url: "/" },
-          { text: "배정자관리", url: "/" },
-        ]}
-      />
-      <div className="box-cont">
-        {/* search box */}
-        <div className="search-box">
-          <ul>
-            <li>
-              <p>파트너</p>
-              <SelectBasic placeholder="전체" size="m" />
-            </li>
-            <li>
-              <p>활성화여부</p>
-              <div className="flex items-center gap-3">
-                <Radio name="t1" label="전체" defaultChecked />
-                <Radio name="t1" label="활성(Y)" />
-                <Radio name="t1" label="비활성(N)" />
-              </div>
-            </li>
-            <li className="col-span-2">
-              <p>검색어</p>
-              <div className="flex items-center gap-2">
-                <SelectBasic placeholder="전체" size="m" />
-                <Input placeholder="검색어를 입력하세요" size="l" />
-              </div>
-            </li>
-            <li className="col-span-2">
-              <p>기간</p>
-              <div className="flex items-center gap-2">
-                <SelectBasic placeholder="전체" size="m" />
-                <FormDateRange />
-                <ButtonGroup />
-              </div>
-            </li>
-          </ul>
-          <div className="search-btn">
-            <Button type="green" size="m">
-              검색
-            </Button>
-          </div>
-        </div>
-        {/* //search box */}
+    return (
+        <DefaultLayout>
+            <Topbar
+                title="배정자 공유현황 관리"
+                path={[
+                    { text: "홈", url: "/" },
+                    { text: "파트너/시설관리", url: "/" },
+                    { text: "배정자 공유현황 관리", url: "/" },
+                ]}
+            />
+            <div className="box-cont">
+                {/* search box */}
+                <div className="search-box relative">
+                    <ul>
+                        <li className="col-span-2">
+                            <p>파트너</p>
+                            <SelectBasic placeholder="전체" size="m" />
+                        </li>
 
-        <div className="grow flex flex-col">
-          <div className="flex  items-center">
-            <Button type="black" size="m" className="ml-auto">
-              배정자등록
-            </Button>
-          </div>
-          <div className="flex items-center min-h-[2.5rem] mt-4">
-            <p className="h4">
-              총 <span className="text-green">231</span>건
-            </p>
-            <div className="flex items-center ml-auto">
-              <Button type="outline" size="m">
-                <IcExcel />
-                공유 포인트 지급
-              </Button>
-              <Button type="outline" size="m" className="ml-2">
-                <IcExcel />
-                배정자 일괄등록
-              </Button>
-              <SelectBasic
-                placeholder="50개씩 보기"
-                className="w-[9.375rem] ml-3"
-              />
+                        <li className="col-span-2">
+                            <p>검색어</p>
+                            <div className="flex items-center gap-2">
+                                <SelectBasic placeholder="전체" size="m" />
+                                <Input
+                                    placeholder="검색어를 입력하세요"
+                                    size="l"
+                                />
+                            </div>
+                        </li>
+                        <li className="col-span-2">
+                            <p>기간</p>
+                            <div className="flex items-center gap-2">
+                                <FormDateRange />
+                            </div>
+                        </li>
+                    </ul>
+                    <Button
+                        type="green"
+                        size="m"
+                        className="absolute right-0 bottom-6 mt-0"
+                    >
+                        검색
+                    </Button>
+                </div>
+                {/* //search box */}
+
+                <div className="grow flex flex-col">
+                    <div className="flex items-center min-h-[2.5rem] mb-2">
+                        <p className="h4">
+                            총 <span className="text-green">231</span>건
+                        </p>
+                        <div className="ml-4">
+                            <Button
+                                type="outline"
+                                size="m"
+                                className="justify-self-end"
+                            >
+                                <IcExcel />
+                                엑셀 다운로드
+                            </Button>
+                        </div>
+
+                        <div className="flex items-center gap-2 ml-auto">
+                            <SelectBasic placeholder="최근등록순" size="m" />
+                            <SelectBasic
+                                placeholder="50개씩 보기"
+                                size="m"
+                                className="w-[9.375rem] "
+                            />
+                        </div>
+                    </div>
+                    <div className="table-grid">
+                        <table>
+                            <colgroup>
+                                <col width="60px" />
+                                <col width="auto" />
+                                <col width="8%" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="140px" />
+                                <col width="140px" />
+                                <col width="140px" />
+                                <col width="140px" />
+                                <col width="auto" />
+                                <col width="auto" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">NO</th>
+                                    <th scope="col">파트너명</th>
+                                    <th scope="col">배정자번호</th>
+                                    <th scope="col">배정자명</th>
+                                    <th scope="col">주차장명</th>
+                                    <th scope="col">차량번호</th>
+                                    <th scope="col">전화번호</th>
+                                    <th scope="col">배정시작일</th>
+                                    <th scope="col">배정종료일</th>
+                                    <th scope="col">누적공유시간</th>
+                                    <th scope="col">누적예약시간</th>
+                                    <th scope="col">결제금액</th>
+                                    <th scope="col">한도금액</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>10</td>
+                                    <td>거주자엑셀당일</td>
+                                    <td>8346</td>
+                                    <td>
+                                        <button type="button">
+                                            <span className="underline text-green">
+                                                김길동
+                                            </span>
+                                        </button>
+                                    </td>
+                                    <td>거주자엑셀당일구획</td>
+                                    <td>22도9382</td>
+                                    <td>0102362514</td>
+                                    <td>yyyy-mm-dd 00:00</td>
+                                    <td>yyyy-mm-dd 00:00</td>
+                                    <td>00시간00분</td>
+                                    <td>00시간00분</td>
+                                    <td>0</td>
+                                    <td>90,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div className="table-bottom">
+                        <Paging />
+                    </div>
+                </div>
             </div>
-          </div>
-          <div className="table-grid mt-4">
-            <table>
-              <colgroup>
-                <col width="60px" />
-                <col width="60px" />
-              </colgroup>
-              <thead>
-                <tr>
-                  <th scope="col">
-                    <Checkbox />
-                  </th>
-                  <th scope="col">번호</th>
-                  <th scope="col">회원번호</th>
-                  <th scope="col">활성화 여부</th>
-                  <th scope="col">주차장명</th>
-                  <th scope="col">배정자명</th>
-                  <th scope="col">차량번호</th>
-                  <th scope="col">휴대폰번호</th>
-                  <th scope="col">배정시작일</th>
-                  <th scope="col">배정종료일</th>
-                  <th scope="col">공유시간</th>
-                  <th scope="col">등록자</th>
-                  <th scope="col">등록일시</th>
-                  <th scope="col">최종수정자</th>
-                  <th scope="col">최종수정일시</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <Checkbox />
-                  </td>
-                  <td>10</td>
-                  <td>NNNNNN</td>
-                  <td>Y</td>
-                  <td>구획3-88-0&#40;#11111&#40;</td>
-                  <td>
-                    <button type="button">
-                      <span className="underline">김길동</span>
-                    </button>
-                  </td>
-                  <td>22도9382</td>
-                  <td>0102362514</td>
-                  <td>yyyy-mm-dd 00:00</td>
-                  <td>yyyy-mm-dd 00:00</td>
-                  <td>00시간00분</td>
-                  <td>강남&#40;kangnam&#41;</td>
-                  <td>yyyy-mm-dd 00:00</td>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div className="table-bottom">
-            <Paging />
-            <Button type="outline" size="m" className="justify-self-end">
-              <IcExcel />
-              배정자 엑셀 다운로드
-            </Button>
-          </div>
-        </div>
-      </div>
-    </DefaultLayout>
-  );
+        </DefaultLayout>
+    );
 }

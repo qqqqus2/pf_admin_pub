@@ -130,7 +130,7 @@
 
     //-- open
     &.snb-open {
-        width: rem(280);
+        width: rem(260);
         .logo {
             padding: rem(32) 0;
         }
@@ -140,7 +140,8 @@
                 border: 5px solid transparent;
             }
             overflow-y: auto;
-            left: rem(24);
+            left: rem(12.8);
+            right: rem(12.8);
             bottom: rem(24);
         }
         .cate-box {
@@ -158,7 +159,7 @@
         .menu-item {
             justify-content: space-between;
             height: rem(40);
-            padding: 0 rem(12) 0 rem(16);
+            padding: 0 rem(12) 0 rem(24);
             &-tit,
             &-arrow {
                 display: block;
