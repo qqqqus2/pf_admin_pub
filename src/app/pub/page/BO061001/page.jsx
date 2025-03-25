@@ -15,17 +15,17 @@ export default function BO061001() {
     return (
         <DefaultLayout>
             <Topbar
-                title="공유신청관리"
+                title="공유신청 관리"
                 tip="주차공유 중 개인소유주차공간에 대해 신청을 확인하고 관리합니다."
                 path={[
                     { text: "홈", url: "/" },
                     { text: "문의관리", url: "/" },
-                    { text: "공유신청관리", url: "/" },
+                    { text: "공유신청 관리", url: "/" },
                 ]}
             />
             <div className="box-cont">
                 {/* search box */}
-                <div className="search-box">
+                <div className="search-box relative">
                     <ul>
                         <li>
                             <p className="inline-flex items-center gap-2">
@@ -60,7 +60,9 @@ export default function BO061001() {
                                     defaultChecked
                                 />
                                 <Checkbox label="검토중" />
-                                <Checkbox label="승인완료" />
+                                <Checkbox label="상담중" />
+                                <Checkbox label="계약진행중" />
+                                <Checkbox label="계약완료" />
                                 <Checkbox label="반려" />
                             </div>
                         </li>
@@ -117,7 +119,7 @@ export default function BO061001() {
                             </div>
                         </li>
                     </ul>
-                    <div className="search-btn">
+                    <div className="search-btn absolute right-0 bottom-6 mt-0">
                         <Button type="green" size="m">
                             검색
                         </Button>
@@ -127,7 +129,7 @@ export default function BO061001() {
 
                 <div className="grow flex flex-col">
                     <div className="flex items-center">
-                        <Button type="black" size="m" className="ml-auto">
+                        <Button type="blue" size="m" className="ml-auto">
                             저장
                         </Button>
                     </div>
@@ -135,15 +137,31 @@ export default function BO061001() {
                         <p className="h4">
                             총 <span className="text-green">231</span>건
                         </p>
+                        <div className="ml-4">
+                            <Button type="outline" size="m">
+                                <IcExcel />
+                                엑셀다운로드
+                            </Button>
+                        </div>
                         <SelectBasic
+                            size="m"
                             placeholder="50개씩 보기"
-                            className="w-[9.375rem] ml-auto"
+                            className="ml-auto"
                         />
                     </div>
                     <div className="table-grid row-10 mt-4">
                         <table>
                             <colgroup>
-                                <col width="5%" />
+                                <col width="40px" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="180px" />
                             </colgroup>
                             <thead>
                                 <tr>
@@ -159,8 +177,6 @@ export default function BO061001() {
                                     <th scope="col">검토결과</th>
                                     <th scope="col">담당자</th>
                                     <th scope="col">검토일시</th>
-                                    <th scope="col">최종수정자</th>
-                                    <th scope="col">최종수정일시</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -170,7 +186,7 @@ export default function BO061001() {
                                     </td>
                                     <td>
                                         <button type="button">
-                                            <span className="underline">
+                                            <span className="underline text-green">
                                                 Q12345672
                                             </span>
                                         </button>
@@ -180,12 +196,10 @@ export default function BO061001() {
                                     <td>성남시</td>
                                     <td>시간권</td>
                                     <td>010-1234-5678</td>
-                                    <td>-</td>
+                                    <td>검토중</td>
                                     <td>
                                         <SelectBasic placeholder="담당자" />
                                     </td>
-                                    <td>2024-10-14 14:38</td>
-                                    <td>김파프&#40;admin&#41;</td>
                                     <td>2024-10-14 14:38</td>
                                 </tr>
                                 <tr>
@@ -194,7 +208,7 @@ export default function BO061001() {
                                     </td>
                                     <td>
                                         <button type="button">
-                                            <span className="underline">
+                                            <span className="underline text-green">
                                                 Q12345672
                                             </span>
                                         </button>
@@ -204,12 +218,10 @@ export default function BO061001() {
                                     <td>성남시</td>
                                     <td>시간권</td>
                                     <td>010-1234-5678</td>
-                                    <td>-</td>
+                                    <td>검토중</td>
                                     <td>
                                         <SelectBasic placeholder="담당자" />
                                     </td>
-                                    <td>2024-10-14 14:38</td>
-                                    <td>김파프&#40;admin&#41;</td>
                                     <td>2024-10-14 14:38</td>
                                 </tr>
                                 <tr>
@@ -218,7 +230,7 @@ export default function BO061001() {
                                     </td>
                                     <td>
                                         <button type="button">
-                                            <span className="underline">
+                                            <span className="underline text-green">
                                                 Q12345672
                                             </span>
                                         </button>
@@ -228,12 +240,10 @@ export default function BO061001() {
                                     <td>성남시</td>
                                     <td>시간권</td>
                                     <td>010-1234-5678</td>
-                                    <td>-</td>
+                                    <td>검토중</td>
                                     <td>
                                         <SelectBasic placeholder="담당자" />
                                     </td>
-                                    <td>2024-10-14 14:38</td>
-                                    <td>김파프&#40;admin&#41;</td>
                                     <td>2024-10-14 14:38</td>
                                 </tr>
                                 <tr>
@@ -242,7 +252,7 @@ export default function BO061001() {
                                     </td>
                                     <td>
                                         <button type="button">
-                                            <span className="underline">
+                                            <span className="underline text-green">
                                                 Q12345672
                                             </span>
                                         </button>
@@ -252,12 +262,10 @@ export default function BO061001() {
                                     <td>성남시</td>
                                     <td>시간권</td>
                                     <td>010-1234-5678</td>
-                                    <td>-</td>
+                                    <td>검토중</td>
                                     <td>
                                         <SelectBasic placeholder="담당자" />
                                     </td>
-                                    <td>2024-10-14 14:38</td>
-                                    <td>김파프&#40;admin&#41;</td>
                                     <td>2024-10-14 14:38</td>
                                 </tr>
                                 <tr>
@@ -266,7 +274,7 @@ export default function BO061001() {
                                     </td>
                                     <td>
                                         <button type="button">
-                                            <span className="underline">
+                                            <span className="underline text-green">
                                                 Q12345672
                                             </span>
                                         </button>
@@ -276,12 +284,10 @@ export default function BO061001() {
                                     <td>성남시</td>
                                     <td>시간권</td>
                                     <td>010-1234-5678</td>
-                                    <td>-</td>
+                                    <td>검토중</td>
                                     <td>
                                         <SelectBasic placeholder="담당자" />
                                     </td>
-                                    <td>2024-10-14 14:38</td>
-                                    <td>김파프&#40;admin&#41;</td>
                                     <td>2024-10-14 14:38</td>
                                 </tr>
                                 <tr>
@@ -290,7 +296,7 @@ export default function BO061001() {
                                     </td>
                                     <td>
                                         <button type="button">
-                                            <span className="underline">
+                                            <span className="underline text-green">
                                                 Q12345672
                                             </span>
                                         </button>
@@ -300,12 +306,10 @@ export default function BO061001() {
                                     <td>성남시</td>
                                     <td>시간권</td>
                                     <td>010-1234-5678</td>
-                                    <td>-</td>
+                                    <td>검토중</td>
                                     <td>
                                         <SelectBasic placeholder="담당자" />
                                     </td>
-                                    <td>2024-10-14 14:38</td>
-                                    <td>김파프&#40;admin&#41;</td>
                                     <td>2024-10-14 14:38</td>
                                 </tr>
                                 <tr>
@@ -314,7 +318,7 @@ export default function BO061001() {
                                     </td>
                                     <td>
                                         <button type="button">
-                                            <span className="underline">
+                                            <span className="underline text-green">
                                                 Q12345672
                                             </span>
                                         </button>
@@ -324,12 +328,10 @@ export default function BO061001() {
                                     <td>성남시</td>
                                     <td>시간권</td>
                                     <td>010-1234-5678</td>
-                                    <td>-</td>
+                                    <td>검토중</td>
                                     <td>
                                         <SelectBasic placeholder="담당자" />
                                     </td>
-                                    <td>2024-10-14 14:38</td>
-                                    <td>김파프&#40;admin&#41;</td>
                                     <td>2024-10-14 14:38</td>
                                 </tr>
                                 <tr>
@@ -338,7 +340,7 @@ export default function BO061001() {
                                     </td>
                                     <td>
                                         <button type="button">
-                                            <span className="underline">
+                                            <span className="underline text-green">
                                                 Q12345672
                                             </span>
                                         </button>
@@ -348,12 +350,10 @@ export default function BO061001() {
                                     <td>성남시</td>
                                     <td>시간권</td>
                                     <td>010-1234-5678</td>
-                                    <td>-</td>
+                                    <td>검토중</td>
                                     <td>
                                         <SelectBasic placeholder="담당자" />
                                     </td>
-                                    <td>2024-10-14 14:38</td>
-                                    <td>김파프&#40;admin&#41;</td>
                                     <td>2024-10-14 14:38</td>
                                 </tr>
                                 <tr>
@@ -362,7 +362,7 @@ export default function BO061001() {
                                     </td>
                                     <td>
                                         <button type="button">
-                                            <span className="underline">
+                                            <span className="underline text-green">
                                                 Q12345672
                                             </span>
                                         </button>
@@ -372,12 +372,10 @@ export default function BO061001() {
                                     <td>성남시</td>
                                     <td>시간권</td>
                                     <td>010-1234-5678</td>
-                                    <td>-</td>
+                                    <td>검토중</td>
                                     <td>
                                         <SelectBasic placeholder="담당자" />
                                     </td>
-                                    <td>2024-10-14 14:38</td>
-                                    <td>김파프&#40;admin&#41;</td>
                                     <td>2024-10-14 14:38</td>
                                 </tr>
                                 <tr>
@@ -386,7 +384,7 @@ export default function BO061001() {
                                     </td>
                                     <td>
                                         <button type="button">
-                                            <span className="underline">
+                                            <span className="underline text-green">
                                                 Q12345672
                                             </span>
                                         </button>
@@ -396,12 +394,10 @@ export default function BO061001() {
                                     <td>성남시</td>
                                     <td>시간권</td>
                                     <td>010-1234-5678</td>
-                                    <td>-</td>
+                                    <td>검토중</td>
                                     <td>
                                         <SelectBasic placeholder="담당자" />
                                     </td>
-                                    <td>2024-10-14 14:38</td>
-                                    <td>김파프&#40;admin&#41;</td>
                                     <td>2024-10-14 14:38</td>
                                 </tr>
                                 <tr>
@@ -410,7 +406,7 @@ export default function BO061001() {
                                     </td>
                                     <td>
                                         <button type="button">
-                                            <span className="underline">
+                                            <span className="underline text-green">
                                                 Q12345672
                                             </span>
                                         </button>
@@ -420,12 +416,10 @@ export default function BO061001() {
                                     <td>성남시</td>
                                     <td>시간권</td>
                                     <td>010-1234-5678</td>
-                                    <td>-</td>
+                                    <td>검토중</td>
                                     <td>
                                         <SelectBasic placeholder="담당자" />
                                     </td>
-                                    <td>2024-10-14 14:38</td>
-                                    <td>김파프&#40;admin&#41;</td>
                                     <td>2024-10-14 14:38</td>
                                 </tr>
                                 <tr>
@@ -434,7 +428,7 @@ export default function BO061001() {
                                     </td>
                                     <td>
                                         <button type="button">
-                                            <span className="underline">
+                                            <span className="underline text-green">
                                                 Q12345672
                                             </span>
                                         </button>
@@ -444,12 +438,10 @@ export default function BO061001() {
                                     <td>성남시</td>
                                     <td>시간권</td>
                                     <td>010-1234-5678</td>
-                                    <td>-</td>
+                                    <td>검토중</td>
                                     <td>
                                         <SelectBasic placeholder="담당자" />
                                     </td>
-                                    <td>2024-10-14 14:38</td>
-                                    <td>김파프&#40;admin&#41;</td>
                                     <td>2024-10-14 14:38</td>
                                 </tr>
                                 <tr>
@@ -458,7 +450,7 @@ export default function BO061001() {
                                     </td>
                                     <td>
                                         <button type="button">
-                                            <span className="underline">
+                                            <span className="underline text-green">
                                                 Q12345672
                                             </span>
                                         </button>
@@ -468,12 +460,10 @@ export default function BO061001() {
                                     <td>성남시</td>
                                     <td>시간권</td>
                                     <td>010-1234-5678</td>
-                                    <td>-</td>
+                                    <td>검토중</td>
                                     <td>
                                         <SelectBasic placeholder="담당자" />
                                     </td>
-                                    <td>2024-10-14 14:38</td>
-                                    <td>김파프&#40;admin&#41;</td>
                                     <td>2024-10-14 14:38</td>
                                 </tr>
                                 <tr>
@@ -482,7 +472,7 @@ export default function BO061001() {
                                     </td>
                                     <td>
                                         <button type="button">
-                                            <span className="underline">
+                                            <span className="underline text-green">
                                                 Q12345672
                                             </span>
                                         </button>
@@ -492,12 +482,10 @@ export default function BO061001() {
                                     <td>성남시</td>
                                     <td>시간권</td>
                                     <td>010-1234-5678</td>
-                                    <td>-</td>
+                                    <td>검토중</td>
                                     <td>
                                         <SelectBasic placeholder="담당자" />
                                     </td>
-                                    <td>2024-10-14 14:38</td>
-                                    <td>김파프&#40;admin&#41;</td>
                                     <td>2024-10-14 14:38</td>
                                 </tr>
                             </tbody>
@@ -505,14 +493,6 @@ export default function BO061001() {
                     </div>
                     <div className="table-bottom">
                         <Paging />
-                        <Button
-                            type="outline"
-                            size="m"
-                            className="justify-self-end"
-                        >
-                            <IcExcel />
-                            엑셀다운로드
-                        </Button>
                     </div>
                 </div>
             </div>

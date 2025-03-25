@@ -8,52 +8,36 @@ import Checkbox from "@pub/components/Form/Check";
 import SelectBasic from "@pub/components/Form/Select";
 import FormDateRange from "@pub/components/Form/DateRange";
 import IcExcel from "@/assets/icons/ico_excel.svg";
+import Radio from "@pub/components/Form/Radio";
 
 export default function BO094001() {
     return (
         <DefaultLayout>
             <Topbar
-                title="다운로드 이력관리"
+                title="다운로드 이력 관리"
                 path={[
                     { text: "홈", url: "/" },
                     { text: "이력관리", url: "/" },
-                    { text: "다운로드 이력관리", url: "/" },
+                    { text: "다운로드 이력 관리", url: "/" },
                 ]}
             />
             <div className="box-cont">
                 {/* search box */}
-                <div className="search-box">
+                <div className="search-box relative">
                     <ul>
                         <li className="col-span-2">
                             <p>구분</p>
-                            <div className="flex items-center gap-2">
-                                <SelectBasic placeholder="전체" size="m" />
-                                <SelectBasic
-                                    placeholder="전체"
-                                    size="m"
-                                    disabled
-                                />
+                            <div className="flex items-center gap-3">
+                                <Radio name="t1" label="전체" defaultChecked />
+                                <Radio name="t1" label="관리자" />
+                                <Radio name="t1" label="파트너" />
                             </div>
                         </li>
                         <li className="col-span-2">
                             <p>메뉴</p>
                             <div className="flex items-center gap-2">
                                 <SelectBasic placeholder="전체" size="m" />
-                                <SelectBasic
-                                    placeholder="전체"
-                                    size="m"
-                                    disabled
-                                />
-                                <SelectBasic
-                                    placeholder="전체"
-                                    size="m"
-                                    disabled
-                                />
-                                <SelectBasic
-                                    placeholder="전체"
-                                    size="m"
-                                    disabled
-                                />
+                                <SelectBasic placeholder="전체" size="m" />
                             </div>
                         </li>
                         <li className="col-span-2">
@@ -67,14 +51,14 @@ export default function BO094001() {
                             </div>
                         </li>
                         <li className="col-span-2">
-                            <p>다운로드일</p>
+                            <p>다운로드일자</p>
                             <div className="flex items-center gap-2">
                                 <FormDateRange />
                                 <ButtonGroup />
                             </div>
                         </li>
                     </ul>
-                    <div className="search-btn">
+                    <div className="search-btn absolute right-0 bottom-6 mt-0">
                         <Button type="green" size="m">
                             검색
                         </Button>
@@ -87,39 +71,46 @@ export default function BO094001() {
                         <p className="h4">
                             총 <span className="text-green">231</span>건
                         </p>
-                        <div className="grid grid-cols-[9.375rem_9.375rem] gap-2 ml-auto">
-                            <SelectBasic placeholder="최근 다운로드순" />
-                            <SelectBasic placeholder="50개씩 보기" />
+                        <div className="ml-4">
+                            <Button
+                                type="outline"
+                                size="m"
+                                className="justify-self-end"
+                            >
+                                <IcExcel />
+                                엑셀다운로드
+                            </Button>
+                        </div>
+                        <div className="grid gap-2 ml-auto">
+                            <SelectBasic size="m" placeholder="50개씩 보기" />
                         </div>
                     </div>
-                    <div className="table-grid mt-4">
+                    <div className="table-grid mt-2">
                         <table>
                             <colgroup>
-                                <col width="60px" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="30%" />
+                                <col width="180px" />
                             </colgroup>
                             <thead>
                                 <tr>
-                                    <th scope="col">
-                                        <Checkbox />
-                                    </th>
                                     <th scope="col">구분</th>
                                     <th scope="col">아이디</th>
                                     <th scope="col">이름</th>
                                     <th scope="col">소속회사/소속부서</th>
                                     <th scope="col">메뉴</th>
-                                    <th scope="col">다운로드파일</th>
                                     <th scope="col">다운로드일시</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>
-                                        <Checkbox />
-                                    </td>
                                     <td>관리자</td>
                                     <td>
                                         <button type="button">
-                                            <span className="underline">
+                                            <span className="underline text-green">
                                                 Parking00
                                             </span>
                                         </button>
@@ -130,25 +121,14 @@ export default function BO094001() {
                                         BO &gt; 파트너시설관리 &gt; 시설관리
                                         &gt; AIoT센서{" "}
                                     </td>
-                                    <td>
-                                        <a
-                                            href="/images/logo_pf.png"
-                                            download
-                                            className="inline-flex"
-                                        >
-                                            <IcExcel />
-                                        </a>
-                                    </td>
+
                                     <td>2024-10-14 14:38</td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <Checkbox />
-                                    </td>
                                     <td>관리자</td>
                                     <td>
                                         <button type="button">
-                                            <span className="underline">
+                                            <span className="underline text-green">
                                                 Parking00
                                             </span>
                                         </button>
@@ -159,15 +139,7 @@ export default function BO094001() {
                                         BO &gt; 파트너시설관리 &gt; 시설관리
                                         &gt; AIoT센서{" "}
                                     </td>
-                                    <td>
-                                        <a
-                                            href="/images/logo_pf.png"
-                                            download
-                                            className="file-down"
-                                        >
-                                            logo_pf.png
-                                        </a>
-                                    </td>
+
                                     <td>2024-10-14 14:38</td>
                                 </tr>
                             </tbody>
@@ -175,14 +147,6 @@ export default function BO094001() {
                     </div>
                     <div className="table-bottom">
                         <Paging />
-                        <Button
-                            type="outline"
-                            size="m"
-                            className="justify-self-end"
-                        >
-                            <IcExcel />
-                            엑셀다운로드
-                        </Button>
                     </div>
                 </div>
             </div>

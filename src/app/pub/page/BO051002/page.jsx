@@ -13,11 +13,11 @@ export default function BO051002() {
     return (
         <DefaultLayout>
             <Topbar
-                title="쿠폰등록"
+                title="쿠폰 관리"
                 path={[
                     { text: "홈", url: "/" },
                     { text: "쿠폰 · 포인트관리", url: "/" },
-                    { text: "쿠폰관리", url: "/" },
+                    { text: "쿠폰 관리", url: "/" },
                 ]}
             />
 
@@ -59,12 +59,20 @@ export default function BO051002() {
                                         <div className="flex items-center gap-7">
                                             <Radio
                                                 name="t2"
-                                                label="일반쿠폰"
+                                                label="온라인 쿠폰"
                                                 defaultChecked
                                             />
                                             <Radio
                                                 name="t2"
-                                                label="오프라인쿠폰"
+                                                label="오프라인 쿠폰"
+                                            />
+                                            <Radio
+                                                name="t2"
+                                                label="웰컴 쿠폰"
+                                            />
+                                            <Radio
+                                                name="t2"
+                                                label="첫구매 쿠폰"
                                             />
                                         </div>
                                     </td>
@@ -111,15 +119,15 @@ export default function BO051002() {
                                     <td colSpan={4}></td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">발급기간</th>
+                                    <th scope="row">
+                                        <span className="text-req">
+                                            발급기간
+                                        </span>
+                                    </th>
                                     <td colSpan={5}>
                                         <div className="flex items-center gap-3">
                                             <FormDateRange time />
-                                            <Checkbox
-                                                size="s"
-                                                size="s"
-                                                label="무제한"
-                                            />
+                                            <Checkbox size="s" label="무제한" />
                                         </div>
                                         <p className="text-muted text-sm mt-3">
                                             설정된 기간동안 다운로드가 가능한
@@ -131,7 +139,7 @@ export default function BO051002() {
                                 <tr>
                                     <th scope="row">
                                         <span className="text-req">
-                                            발급기간
+                                            유효기간
                                         </span>
                                     </th>
                                     <td colSpan={5}>
@@ -177,7 +185,7 @@ export default function BO051002() {
                                         </p>
                                     </td>
                                 </tr>
-                                <tr>
+                                {/* <tr>
                                     <th scope="row">발급수량</th>
                                     <td colSpan={5}>
                                         <div className="flex items-center gap-3">
@@ -204,17 +212,13 @@ export default function BO051002() {
                                             쿠폰은 한번만 다운받을 수 있습니다.
                                         </p>
                                     </td>
-                                </tr>
+                                </tr> */}
                                 <tr>
                                     <th scope="row">유의사항</th>
                                     <td colSpan={5}>
                                         <div className="flex gap-3">
                                             <Text rows={3} className="grow" />
-                                            <Button
-                                                type="outline"
-                                                size="s"
-                                                disabled
-                                            >
+                                            <Button type="outline" size="s">
                                                 유의사항 불러오기
                                             </Button>
                                         </div>
@@ -224,7 +228,7 @@ export default function BO051002() {
                                         </p>
                                     </td>
                                 </tr>
-                                <tr>
+                                {/* <tr>
                                     <th scope="row">관리자메모</th>
                                     <td colSpan={5}>
                                         <div className="flex gap-3">
@@ -238,11 +242,11 @@ export default function BO051002() {
                                             </Button>
                                         </div>
                                     </td>
-                                </tr>
+                                </tr> */}
                             </tbody>
                         </table>
                     </div>
-                    <div className="table-basic mt-6">
+                    {/* <div className="table-basic mt-6">
                         <table>
                             <tbody>
                                 <tr>
@@ -546,7 +550,7 @@ export default function BO051002() {
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
+                    </div> */}
                     <div className="table-basic mt-[1.25rem]">
                         <table>
                             <colgroup>
@@ -568,9 +572,9 @@ export default function BO051002() {
                 </div>
             </div>
             <div className="flex mt-6">
-                <Button type="black" size="m">
+                {/* <Button type="black" size="m">
                     목록
-                </Button>
+                </Button> */}
                 <div className="flex items-center gap-2 ml-auto">
                     <Button type="black" size="m">
                         취소

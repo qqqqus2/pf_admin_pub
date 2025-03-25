@@ -20,9 +20,9 @@ export default function BO045001() {
                     { text: "약관관리", url: "/" },
                 ]}
             />
-            <div className="box-cont">
+            <div className="box-cont overflow-y-auto">
                 {/* search box */}
-                <div className="search-box">
+                <div className="search-box relative">
                     <ul>
                         <li className="col-span-2">
                             <p>구분</p>
@@ -33,6 +33,7 @@ export default function BO045001() {
                             <div className="flex items-center gap-3">
                                 <Checkbox label="전체" defaultChecked />
                                 <Checkbox label="회원" />
+                                <Checkbox label="배정자" />
                                 <Checkbox label="파트너" />
                                 <Checkbox label="관리자" />
                             </div>
@@ -58,7 +59,7 @@ export default function BO045001() {
                             </div>
                         </li>
                     </ul>
-                    <div className="search-btn">
+                    <div className="search-btn absolute right-0 bottom-6 mt-0">
                         <Button type="green" size="m">
                             검색
                         </Button>
@@ -72,19 +73,27 @@ export default function BO045001() {
                             등록
                         </Button>
                     </div>
-                    <div className="flex items-center min-h-[2.5rem] mt-4">
+                    <div className="flex items-center min-h-[2.5rem] mt-2">
                         <p className="h4">
                             총 <span className="text-green">231</span>건
                         </p>
                         <SelectBasic
+                            size="m"
                             placeholder="50개씩 보기"
-                            className="w-[9.375rem] ml-auto"
+                            className=" ml-auto"
                         />
                     </div>
-                    <div className="table-grid mt-4">
+                    <div className="table-grid mt-2">
                         <table>
                             <colgroup>
                                 <col width="60px" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="25%" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="180px" />
                             </colgroup>
                             <thead>
                                 <tr>
@@ -96,8 +105,6 @@ export default function BO045001() {
                                     <th scope="col">게시상태</th>
                                     <th scope="col">등록자</th>
                                     <th scope="col">등록일시</th>
-                                    <th scope="col">최종수정자</th>
-                                    <th scope="col">최종수정일시</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -118,8 +125,6 @@ export default function BO045001() {
                                     <td>게시중</td>
                                     <td>김파프&#40;admin&#41;</td>
                                     <td>2024-10-14 14:38</td>
-                                    <td>-</td>
-                                    <td>-</td>
                                 </tr>
                             </tbody>
                         </table>

@@ -21,7 +21,7 @@ export default function BO031001() {
                     { text: "파트너관리", url: "/" },
                 ]}
             />
-            <div className="box-cont">
+            <div className="box-cont overflow-y-auto">
                 {/* search box */}
                 <div className="search-box relative">
                     <ul>

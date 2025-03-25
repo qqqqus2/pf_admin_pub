@@ -14,7 +14,8 @@ export default function BO061002() {
     return (
         <DefaultLayout>
             <Topbar
-                title="공유신청관리 조회/상세"
+                title="공유신청관리 상세"
+                tip="주차공유 중 개인소유주차공간에 대해 신청을 확인하고 관리합니다."
                 path={[
                     { text: "홈", url: "/" },
                     { text: "문의관리", url: "/" },
@@ -107,12 +108,17 @@ export default function BO061002() {
                                                 label="검토중"
                                                 defaultChecked
                                             />
-                                            <Radio name="t1" label="승인완료" />
+                                            <Radio name="t1" label="상담중" />
+                                            <Radio
+                                                name="t1"
+                                                label="계약진행중"
+                                            />
+                                            <Radio name="t1" label="계약완료" />
                                             <Radio name="t1" label="반려" />
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
+                                {/* <tr>
                                     <th className="bg-h-blue">
                                         <span className="text-req">
                                             관리자 메모
@@ -130,11 +136,11 @@ export default function BO061002() {
                                             </Button>
                                         </div>
                                     </td>
-                                </tr>
+                                </tr> */}
                             </tbody>
                         </table>
                     </div>
-                    <div className="table-memo bg-cell-purple">
+                    {/* <div className="table-memo bg-cell-purple">
                         <table>
                             <colgroup>
                                 <col width="212px" />
@@ -176,7 +182,7 @@ export default function BO061002() {
                             </tbody>
                         </table>
                         <Paging className="mt-2" />
-                    </div>
+                    </div> */}
                 </div>
                 <div>
                     <p className="h4">신청내용</p>
@@ -345,14 +351,11 @@ export default function BO061002() {
                     목록
                 </Button>
                 <div className="flex items-center gap-2 ml-auto">
-                    <Button type="black" size="m">
+                    <Button type="gray" size="m">
                         취소
                     </Button>
                     <Button type="green" size="m">
                         저장
-                    </Button>
-                    <Button type="blue" size="m">
-                        답변
                     </Button>
                 </div>
             </div>

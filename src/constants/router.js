@@ -327,7 +327,7 @@ export const pubRouter = [
         depth1: "전시/컨텐츠관리",
         depth2: "공지관리",
         depth3: "목록",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO042001",
@@ -335,7 +335,7 @@ export const pubRouter = [
         depth1: "전시/컨텐츠관리",
         depth2: "이벤트관리",
         depth3: "목록",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO042004",
@@ -343,7 +343,7 @@ export const pubRouter = [
         depth1: "전시/컨텐츠관리",
         depth2: "이벤트관리",
         depth3: "이벤트등록",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO045001",
@@ -351,7 +351,7 @@ export const pubRouter = [
         depth1: "전시/컨텐츠관리",
         depth2: "약관관리",
         depth3: "목록",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO046001",
@@ -359,7 +359,7 @@ export const pubRouter = [
         depth1: "전시/컨텐츠관리",
         depth2: "배너/팝업관리",
         depth3: "목록",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO047001",
@@ -367,7 +367,7 @@ export const pubRouter = [
         depth1: "전시/컨텐츠관리",
         depth2: "FAQ관리",
         depth3: "목록",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO048001",
@@ -375,7 +375,7 @@ export const pubRouter = [
         depth1: "전시/컨텐츠관리",
         depth2: "이용안내관리",
         depth3: "목록",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/drawer04",
@@ -383,7 +383,7 @@ export const pubRouter = [
         depth1: "전시/컨텐츠관리",
         depth2: "Drawer & Modal",
         depth3: "",
-        status: "",
+        status: "완료",
     },
     // 05 쿠폰포인트관리
     {
@@ -392,7 +392,7 @@ export const pubRouter = [
         depth1: "쿠폰/포인트관리",
         depth2: "쿠폰관리",
         depth3: "",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO051002",
@@ -400,7 +400,7 @@ export const pubRouter = [
         depth1: "쿠폰/포인트관리",
         depth2: "쿠폰관리",
         depth3: "등록",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO052001",
@@ -408,7 +408,7 @@ export const pubRouter = [
         depth1: "쿠폰/포인트관리",
         depth2: "포인트관리",
         depth3: "",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO053001",
@@ -416,7 +416,7 @@ export const pubRouter = [
         depth1: "쿠폰/포인트관리",
         depth2: "포인트상품권관리",
         depth3: "",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/drawer05",
@@ -424,7 +424,7 @@ export const pubRouter = [
         depth1: "쿠폰/포인트관리",
         depth2: "Drawer & Modal",
         depth3: "",
-        status: "",
+        status: "완료",
     },
     // 06 문의관리
     {
@@ -433,7 +433,7 @@ export const pubRouter = [
         depth1: "문의관리",
         depth2: "공유신청관리",
         depth3: "목록",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO061002",
@@ -441,7 +441,7 @@ export const pubRouter = [
         depth1: "문의관리",
         depth2: "공유신청관리",
         depth3: "조회/상세",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO062001",
@@ -449,7 +449,7 @@ export const pubRouter = [
         depth1: "문의관리",
         depth2: "1:1문의관리",
         depth3: "목록",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO062002",
@@ -457,7 +457,7 @@ export const pubRouter = [
         depth1: "문의관리",
         depth2: "1:1문의관리",
         depth3: "조회/상세",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO064001",
@@ -465,7 +465,7 @@ export const pubRouter = [
         depth1: "문의관리",
         depth2: "부정주차신고관리",
         depth3: "목록",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO064002",
@@ -473,7 +473,7 @@ export const pubRouter = [
         depth1: "문의관리",
         depth2: "부정주차신고관리",
         depth3: "조회/상세",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO064001a",
@@ -481,7 +481,7 @@ export const pubRouter = [
         depth1: "문의관리",
         depth2: "제보관리",
         depth3: "목록",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO064002a",
@@ -489,7 +489,7 @@ export const pubRouter = [
         depth1: "문의관리",
         depth2: "제보관리",
         depth3: "조회/상세",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO065001",
@@ -497,7 +497,7 @@ export const pubRouter = [
         depth1: "문의관리",
         depth2: "결제대행관리",
         depth3: "",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/drawer06",
@@ -505,7 +505,7 @@ export const pubRouter = [
         depth1: "문의관리",
         depth2: "Drawer & Modal",
         depth3: "",
-        status: "",
+        status: "완료",
     },
     // 07 이력관리
     {
@@ -514,7 +514,7 @@ export const pubRouter = [
         depth1: "이력관리",
         depth2: "접속이력관리",
         depth3: "목록",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO092001",
@@ -522,7 +522,7 @@ export const pubRouter = [
         depth1: "이력관리",
         depth2: "다운로드이력관리",
         depth3: "목록",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO093001",
@@ -530,15 +530,15 @@ export const pubRouter = [
         depth1: "이력관리",
         depth2: "약관이력관리",
         depth3: "목록",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO094001",
         title: "_이력관리>정보변경이력관리>목록",
         depth1: "이력관리",
-        depth2: "정보변경이력관리",
+        depth2: "주차권 요금변경 이력 관리",
         depth3: "목록",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/drawer09",
@@ -546,7 +546,7 @@ export const pubRouter = [
         depth1: "이력관리",
         depth2: "Drawer & Modal",
         depth3: "",
-        status: "",
+        status: "완료",
     },
     // 08 정산관리
     {
@@ -555,7 +555,7 @@ export const pubRouter = [
         depth1: "정산관리",
         depth2: "결제관리",
         depth3: "목록",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO071004",
@@ -563,7 +563,7 @@ export const pubRouter = [
         depth1: "정산관리",
         depth2: "주차장 결제관리",
         depth3: "목록",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO072001",
@@ -571,7 +571,7 @@ export const pubRouter = [
         depth1: "정산관리",
         depth2: "정산관리",
         depth3: "목록",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/drawer07",
@@ -579,7 +579,7 @@ export const pubRouter = [
         depth1: "정산관리",
         depth2: "Drawer & Modal",
         depth3: "",
-        status: "",
+        status: "완료",
     },
     // 09 관리자설정관리
     {

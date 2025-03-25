@@ -13,16 +13,16 @@ export default function BO093001() {
     return (
         <DefaultLayout>
             <Topbar
-                title="약관이력관리"
+                title="약관 이력 관리"
                 path={[
                     { text: "홈", url: "/" },
                     { text: "이력관리", url: "/" },
-                    { text: "약관이력관리", url: "/" },
+                    { text: "약관 이력 관리", url: "/" },
                 ]}
             />
             <div className="box-cont">
                 {/* search box */}
-                <div className="search-box">
+                <div className="search-box relative">
                     <ul>
                         <li className="col-span-2">
                             <p>구분</p>
@@ -31,13 +31,11 @@ export default function BO093001() {
                         <li>
                             <p>대상</p>
                             <div className="flex items-center gap-3">
-                                <Checkbox
-                                    label="전체"
-                                    size="s"
-                                    defaultChecked
-                                />
-                                <Checkbox label="회원" size="s" />
-                                <Checkbox label="파트너" size="s" />
+                                <Checkbox label="전체" defaultChecked />
+                                <Checkbox label="회원" />
+                                <Checkbox label="배정자" />
+                                <Checkbox label="파트너" />
+                                <Checkbox label="관리자" />
                             </div>
                         </li>
                         <li>
@@ -64,7 +62,7 @@ export default function BO093001() {
                             </div>
                         </li>
                     </ul>
-                    <div className="search-btn">
+                    <div className="search-btn absolute right-0 bottom-6 mt-0">
                         <Button type="green" size="m">
                             검색
                         </Button>
@@ -77,9 +75,18 @@ export default function BO093001() {
                         <p className="h4">
                             총 <span className="text-green">231</span>건
                         </p>
-                        <div className="grid grid-cols-[9.375rem_9.375rem] gap-2 ml-auto">
-                            <SelectBasic placeholder="최근 다운로드순" />
-                            <SelectBasic placeholder="50개씩 보기" />
+                        <div className="ml-4">
+                            <Button
+                                type="outline"
+                                size="m"
+                                className="justify-self-end"
+                            >
+                                <IcExcel />
+                                엑셀다운로드
+                            </Button>
+                        </div>
+                        <div className="grid gap-2 ml-auto">
+                            <SelectBasic size="m" placeholder="50개씩 보기" />
                         </div>
                     </div>
                     <div className="table-grid mt-4">
@@ -95,8 +102,6 @@ export default function BO093001() {
                                     <th scope="col">대상</th>
                                     <th scope="col">제목</th>
                                     <th scope="col">게시상태</th>
-                                    <th scope="col">등록자</th>
-                                    <th scope="col">등록일시</th>
                                     <th scope="col">최종수정자</th>
                                     <th scope="col">최종수정일시</th>
                                 </tr>
@@ -104,7 +109,7 @@ export default function BO093001() {
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>V0.2</td>
+                                    <td>0.2</td>
                                     <td>개인정보처리방침</td>
                                     <td>회원</td>
                                     <td>
@@ -117,25 +122,20 @@ export default function BO093001() {
                                     <td>게시중</td>
                                     <td>김파프&#40;adminid&#41;</td>
                                     <td>2024-10-14 14:38</td>
-                                    <td>-</td>
-                                    <td>-</td>
                                 </tr>
                                 <tr>
-                                    <td>2</td>
-                                    <td>V0.2</td>
-                                    <td>이용약관</td>
-                                    <td>파트너</td>
+                                    <td>1</td>
+                                    <td>0.2</td>
+                                    <td>개인정보처리방침</td>
+                                    <td>회원</td>
                                     <td>
                                         <button type="button">
                                             <span className="underline text-green line-clamp-1">
                                                 약관관리 제목이 보입니다
-                                                약관관리 제목이 보입니다
                                             </span>
                                         </button>
                                     </td>
-                                    <td>예정</td>
-                                    <td>김파프&#40;adminid&#41;</td>
-                                    <td>2024-10-14 14:38</td>
+                                    <td>게시중</td>
                                     <td>김파프&#40;adminid&#41;</td>
                                     <td>2024-10-14 14:38</td>
                                 </tr>
@@ -144,14 +144,6 @@ export default function BO093001() {
                     </div>
                     <div className="table-bottom">
                         <Paging />
-                        <Button
-                            type="outline"
-                            size="m"
-                            className="justify-self-end"
-                        >
-                            <IcExcel />
-                            엑셀다운로드
-                        </Button>
                     </div>
                 </div>
             </div>

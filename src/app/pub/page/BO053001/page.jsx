@@ -23,7 +23,7 @@ export default function BO053001() {
             />
             <div className="box-cont">
                 {/* search box */}
-                <div className="search-box">
+                <div className="search-box relative">
                     <ul>
                         <li>
                             <p>판매처</p>
@@ -64,7 +64,7 @@ export default function BO053001() {
                             </div>
                         </li>
                     </ul>
-                    <div className="search-btn">
+                    <div className="search-btn absolute right-0 bottom-6 mt-0">
                         <Button type="green" size="m">
                             검색
                         </Button>
@@ -82,15 +82,34 @@ export default function BO053001() {
                         <p className="h4">
                             총 <span className="text-green">231</span>건
                         </p>
-                        <div className="grid grid-cols-[9.375rem_9.375rem] gap-2 ml-auto">
-                            <SelectBasic placeholder="최근 등록순" />
-                            <SelectBasic placeholder="50개씩 보기" />
+                        <div className="ml-4">
+                            <Button
+                                type="outline"
+                                size="m"
+                                className="justify-self-end"
+                            >
+                                <IcExcel />
+                                엑셀다운로드
+                            </Button>
+                        </div>
+                        <div className="grid gap-2 ml-auto">
+                            <SelectBasic size="m" placeholder="30개씩 보기" />
                         </div>
                     </div>
                     <div className="table-grid mt-4">
                         <table>
                             <colgroup>
                                 <col width="60px" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="15%" />
+                                <col width="auto" />
+                                <col width="320px" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="180px" />
+                                <col width="10%" />
                             </colgroup>
                             <thead>
                                 <tr>
@@ -112,8 +131,8 @@ export default function BO053001() {
                                     <td>10</td>
                                     <td>
                                         <button type="button">
-                                            <span className="underline">
-                                                NNNNNN
+                                            <span className="underline text-green">
+                                                18
                                             </span>
                                         </button>
                                     </td>
@@ -126,17 +145,17 @@ export default function BO053001() {
                                             난수번호생성
                                         </Button>
                                     </td>
-                                    <td>-</td>
-                                    <td>-</td>
+                                    <td>5</td>
+                                    <td>2</td>
                                     <td>yyyy-mm-dd 00:00</td>
                                     <td>김파프&#40;adminid&#41;</td>
                                 </tr>
                                 <tr>
-                                    <td>10</td>
+                                    <td>11</td>
                                     <td>
                                         <button type="button">
-                                            <span className="underline">
-                                                NNNNNN
+                                            <span className="underline text-green">
+                                                20
                                             </span>
                                         </button>
                                     </td>
@@ -145,13 +164,12 @@ export default function BO053001() {
                                     <td>스마트스토어</td>
                                     <td>yyyy-mm-dd 00:00 ~ yyyy-mm-dd 00:00</td>
                                     <td>
-                                        <Button type="outline" size="s">
+                                        <button tyte="button">
                                             <IcExcel />
-                                            엑셀다운로드
-                                        </Button>
+                                        </button>
                                     </td>
-                                    <td>-</td>
-                                    <td>-</td>
+                                    <td>5</td>
+                                    <td>9</td>
                                     <td>yyyy-mm-dd 00:00</td>
                                     <td>김파프&#40;adminid&#41;</td>
                                 </tr>
@@ -160,14 +178,6 @@ export default function BO053001() {
                     </div>
                     <div className="table-bottom">
                         <Paging />
-                        <Button
-                            type="outline"
-                            size="m"
-                            className="justify-self-end"
-                        >
-                            <IcExcel />
-                            엑셀다운로드
-                        </Button>
                     </div>
                 </div>
             </div>

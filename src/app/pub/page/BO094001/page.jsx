@@ -8,54 +8,38 @@ import Checkbox from "@pub/components/Form/Check";
 import SelectBasic from "@pub/components/Form/Select";
 import FormDateRange from "@pub/components/Form/DateRange";
 import IcExcel from "@/assets/icons/ico_excel.svg";
+import Radio from "@pub/components/Form/Radio";
 
 export default function BO094001() {
     return (
         <DefaultLayout>
             <Topbar
-                title="정보변경 이력관리"
+                title="주차권 요금변경 이력 관리"
                 path={[
                     { text: "홈", url: "/" },
                     { text: "이력관리", url: "/" },
-                    { text: "정보변경 이력관리", url: "/" },
+                    { text: "주차권 요금변경 이력 관리", url: "/" },
                 ]}
             />
             <div className="box-cont">
                 {/* search box */}
-                <div className="search-box">
+                <div className="search-box relative">
                     <ul>
-                        <li className="col-span-2">
-                            <p>구분</p>
-                            <div className="flex items-center gap-2">
-                                <SelectBasic placeholder="전체" size="m" />
-                                <SelectBasic
-                                    placeholder="전체"
-                                    size="m"
-                                    disabled
-                                />
+                        <li>
+                            <p>변경자 구분</p>
+                            <div className="flex items-center gap-3">
+                                <Radio name="t1" label="전체" defaultChecked />
+                                <Radio name="t1" label="관리자" />
+                                <Radio name="t1" label="파트너" />
                             </div>
                         </li>
-                        <li className="col-span-2">
-                            <p>메뉴</p>
+                        <li>
+                            <p>주차권 종류</p>
                             <div className="flex items-center gap-2">
                                 <SelectBasic placeholder="전체" size="m" />
-                                <SelectBasic
-                                    placeholder="전체"
-                                    size="m"
-                                    disabled
-                                />
-                                <SelectBasic
-                                    placeholder="전체"
-                                    size="m"
-                                    disabled
-                                />
-                                <SelectBasic
-                                    placeholder="전체"
-                                    size="m"
-                                    disabled
-                                />
                             </div>
                         </li>
+
                         <li className="col-span-2">
                             <p>검색어</p>
                             <div className="flex items-center gap-2">
@@ -67,14 +51,14 @@ export default function BO094001() {
                             </div>
                         </li>
                         <li className="col-span-2">
-                            <p>업데이트일</p>
+                            <p>최종수정일</p>
                             <div className="flex items-center gap-2">
                                 <FormDateRange />
                                 <ButtonGroup />
                             </div>
                         </li>
                     </ul>
-                    <div className="search-btn">
+                    <div className="search-btn absolute right-0 bottom-6 mt-0">
                         <Button type="green" size="m">
                             검색
                         </Button>
@@ -87,66 +71,62 @@ export default function BO094001() {
                         <p className="h4">
                             총 <span className="text-green">231</span>건
                         </p>
-                        <div className="grid grid-cols-[9.375rem_9.375rem] gap-2 ml-auto">
-                            <SelectBasic placeholder="최근 업데이트순" />
-                            <SelectBasic placeholder="50개씩 보기" />
+                        <div className="ml-4">
+                            <Button
+                                type="outline"
+                                size="m"
+                                className="justify-self-end"
+                            >
+                                <IcExcel />
+                                엑셀다운로드
+                            </Button>
+                        </div>
+                        <div className="grid gap-2 ml-auto">
+                            <SelectBasic size="m" placeholder="50개씩 보기" />
                         </div>
                     </div>
-                    <div className="table-grid mt-4">
+                    <div className="table-grid mt-2">
                         <table>
                             <colgroup>
                                 <col width="60px" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="180px" />
                             </colgroup>
                             <thead>
                                 <tr>
-                                    <th scope="col">
-                                        <Checkbox />
-                                    </th>
-                                    <th scope="col">구분</th>
-                                    <th scope="col">소속회사/소속부서</th>
-                                    <th scope="col">메뉴</th>
-                                    <th scope="col">상세</th>
-                                    <th scope="col">변경항목</th>
-                                    <th scope="col">변경이력횟수</th>
+                                    <th scope="col">No</th>
+                                    <th scope="col">변경자 구분</th>
+                                    <th scope="col">주차권 종류</th>
+                                    <th scope="col">파트너명</th>
+                                    <th scope="col">변경전</th>
+                                    <th scope="col">변경후</th>
                                     <th scope="col">최종수정자</th>
                                     <th scope="col">최종수정일시</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>
-                                        <Checkbox />
-                                    </td>
+                                    <td>28</td>
                                     <td>관리자</td>
-                                    <td>사업실</td>
-                                    <td>
-                                        BO &gt; 파트너시설관리 &gt; 시설관리
-                                        &gt; AIoT센서{" "}
-                                    </td>
-                                    <td>
-                                        <Button type="outline" size="s">
-                                            조회
-                                        </Button>
-                                    </td>
-                                    <td>제목, 내용, 날짜</td>
-                                    <td>10</td>
+                                    <td>월주차권</td>
+                                    <td>키위_파트너_주차권테스트용</td>
+                                    <td>100,000</td>
+                                    <td>100</td>
                                     <td>김파프&#40;adminid&#41;</td>
                                     <td>2024-10-14 14:38</td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <Checkbox />
-                                    </td>
-                                    <td>파트너</td>
-                                    <td>하이파킹</td>
-                                    <td>PO &gt; 주차장상품관리 </td>
-                                    <td>
-                                        <Button type="outline" size="s">
-                                            조회
-                                        </Button>
-                                    </td>
-                                    <td>내용</td>
-                                    <td>10</td>
+                                    <td>28</td>
+                                    <td>관리자</td>
+                                    <td>월주차권</td>
+                                    <td>키위_파트너_주차권테스트용</td>
+                                    <td>100,000</td>
+                                    <td>100</td>
                                     <td>김파프&#40;adminid&#41;</td>
                                     <td>2024-10-14 14:38</td>
                                 </tr>
@@ -155,14 +135,6 @@ export default function BO094001() {
                     </div>
                     <div className="table-bottom">
                         <Paging />
-                        <Button
-                            type="outline"
-                            size="m"
-                            className="justify-self-end"
-                        >
-                            <IcExcel />
-                            엑셀다운로드
-                        </Button>
                     </div>
                 </div>
             </div>

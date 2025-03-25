@@ -15,16 +15,16 @@ export default function BO071001() {
     return (
         <DefaultLayout>
             <Topbar
-                title="결제관리"
+                title="결제 관리"
                 path={[
                     { text: "홈", url: "/" },
                     { text: "정산관리", url: "/" },
-                    { text: "결제관리", url: "/" },
+                    { text: "결제 관리", url: "/" },
                 ]}
             />
             <div className="box-cont">
                 {/* search box */}
-                <div className="search-box">
+                <div className="search-box relative">
                     <ul>
                         <li>
                             <p>결제상태</p>
@@ -52,18 +52,16 @@ export default function BO071001() {
                                 />
                                 <Checkbox
                                     size="s"
-                                    label="이노페이&#40;카드결제&#41;"
-                                />
-                                <Checkbox
-                                    size="s"
-                                    label="이노페이&#40;간편결제&#41;"
-                                />
-                                <Checkbox
-                                    size="s"
-                                    label="이노페이&#40;소액결제&#41;"
+                                    label="이노페이 간편 카드 결제"
                                 />
                                 <Checkbox label="카카오페이" />
-                                <Checkbox label="네이버페이" />
+                                <Checkbox label="가상결제" />
+                                <Checkbox label="이노페이 신용카드 결제" />
+                                <Checkbox label="이노페이 카카오페이" />
+                                <Checkbox label="이노페이 네이버페이" />
+                                <Checkbox label="이노페이 LPAY" />
+                                <Checkbox label="이노페이 페이코" />
+                                <Checkbox label="이노페이 SSG페이" />
                             </div>
                         </li>
                         <li>
@@ -80,11 +78,12 @@ export default function BO071001() {
                                 <Checkbox label="ARS" />
                                 <Checkbox label="무인정산기" />
                                 <Checkbox label="CS" />
+                                <SelectMulti size="m" placeholder="전체" />
                             </div>
                         </li>
                         <li>
                             <p>주차권종류</p>
-                            <SelectMulti size="m" search placeholder="전체" />
+                            <SelectMulti size="m" placeholder="전체" />
                         </li>
                         <li>
                             <p>포인트 사용여부</p>
@@ -121,7 +120,7 @@ export default function BO071001() {
                             </div>
                         </li>
                     </ul>
-                    <div className="search-btn">
+                    <div className="search-btn absolute right-0 bottom-6 mt-0">
                         <Button type="green" size="m">
                             검색
                         </Button>
@@ -131,7 +130,7 @@ export default function BO071001() {
 
                 <div className="grow flex flex-col">
                     <p className="h4">결제현황</p>
-                    <div className="table-basic mt-2">
+                    <div className="table-basic text-center">
                         <table>
                             <thead>
                                 <tr>
@@ -231,6 +230,16 @@ export default function BO071001() {
                         <p className="h4">
                             총 <span className="text-green">231</span>건
                         </p>
+                        <div className="ml-4">
+                            <Button
+                                type="outline"
+                                size="m"
+                                className="justify-self-end"
+                            >
+                                <IcExcel />
+                                엑셀다운로드
+                            </Button>
+                        </div>
                         <SelectBasic
                             placeholder="50개씩 보기"
                             className="w-[9.375rem] ml-auto"
@@ -245,7 +254,7 @@ export default function BO071001() {
                                 <thead>
                                     <tr>
                                         <th rowSpan={2} scope="col">
-                                            <Checkbox />
+                                            No
                                         </th>
                                         <th rowSpan={2} scope="col">
                                             주차권번호
@@ -320,12 +329,10 @@ export default function BO071001() {
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>
-                                            <Checkbox />
-                                        </td>
+                                        <td>1999</td>
                                         <td>
                                             <button type="button">
-                                                <span className="underline">
+                                                <span className="underline text-green">
                                                     NNNNNN
                                                 </span>
                                             </button>
@@ -387,12 +394,10 @@ export default function BO071001() {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <Checkbox />
-                                        </td>
+                                        <td>1999</td>
                                         <td>
                                             <button type="button">
-                                                <span className="underline">
+                                                <span className="underline text-green">
                                                     NNNNNN
                                                 </span>
                                             </button>
@@ -454,12 +459,10 @@ export default function BO071001() {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <Checkbox />
-                                        </td>
+                                        <td>1999</td>
                                         <td>
                                             <button type="button">
-                                                <span className="underline">
+                                                <span className="underline text-green">
                                                     NNNNNN
                                                 </span>
                                             </button>
@@ -521,12 +524,10 @@ export default function BO071001() {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <Checkbox />
-                                        </td>
+                                        <td>1999</td>
                                         <td>
                                             <button type="button">
-                                                <span className="underline">
+                                                <span className="underline text-green">
                                                     NNNNNN
                                                 </span>
                                             </button>
@@ -588,12 +589,10 @@ export default function BO071001() {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <Checkbox />
-                                        </td>
+                                        <td>1999</td>
                                         <td>
                                             <button type="button">
-                                                <span className="underline">
+                                                <span className="underline text-green">
                                                     NNNNNN
                                                 </span>
                                             </button>
@@ -655,12 +654,10 @@ export default function BO071001() {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <Checkbox />
-                                        </td>
+                                        <td>1999</td>
                                         <td>
                                             <button type="button">
-                                                <span className="underline">
+                                                <span className="underline text-green">
                                                     NNNNNN
                                                 </span>
                                             </button>
@@ -722,12 +719,10 @@ export default function BO071001() {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <Checkbox />
-                                        </td>
+                                        <td>1999</td>
                                         <td>
                                             <button type="button">
-                                                <span className="underline">
+                                                <span className="underline text-green">
                                                     NNNNNN
                                                 </span>
                                             </button>
@@ -789,12 +784,10 @@ export default function BO071001() {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <Checkbox />
-                                        </td>
+                                        <td>1999</td>
                                         <td>
                                             <button type="button">
-                                                <span className="underline">
+                                                <span className="underline text-green">
                                                     NNNNNN
                                                 </span>
                                             </button>
@@ -856,12 +849,10 @@ export default function BO071001() {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <Checkbox />
-                                        </td>
+                                        <td>1999</td>
                                         <td>
                                             <button type="button">
-                                                <span className="underline">
+                                                <span className="underline text-green">
                                                     NNNNNN
                                                 </span>
                                             </button>
@@ -923,12 +914,10 @@ export default function BO071001() {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <Checkbox />
-                                        </td>
+                                        <td>1999</td>
                                         <td>
                                             <button type="button">
-                                                <span className="underline">
+                                                <span className="underline text-green">
                                                     NNNNNN
                                                 </span>
                                             </button>
@@ -990,12 +979,10 @@ export default function BO071001() {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <Checkbox />
-                                        </td>
+                                        <td>1999</td>
                                         <td>
                                             <button type="button">
-                                                <span className="underline">
+                                                <span className="underline text-green">
                                                     NNNNNN
                                                 </span>
                                             </button>
@@ -1057,12 +1044,10 @@ export default function BO071001() {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <Checkbox />
-                                        </td>
+                                        <td>1999</td>
                                         <td>
                                             <button type="button">
-                                                <span className="underline">
+                                                <span className="underline text-green">
                                                     NNNNNN
                                                 </span>
                                             </button>
@@ -1124,12 +1109,10 @@ export default function BO071001() {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <Checkbox />
-                                        </td>
+                                        <td>1999</td>
                                         <td>
                                             <button type="button">
-                                                <span className="underline">
+                                                <span className="underline text-green">
                                                     NNNNNN
                                                 </span>
                                             </button>
@@ -1191,12 +1174,10 @@ export default function BO071001() {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <Checkbox />
-                                        </td>
+                                        <td>1999</td>
                                         <td>
                                             <button type="button">
-                                                <span className="underline">
+                                                <span className="underline text-green">
                                                     NNNNNN
                                                 </span>
                                             </button>
@@ -1264,14 +1245,6 @@ export default function BO071001() {
 
                     <div className="table-bottom">
                         <Paging />
-                        <Button
-                            type="outline"
-                            size="m"
-                            className="justify-self-end"
-                        >
-                            <IcExcel />
-                            엑셀다운로드
-                        </Button>
                     </div>
                 </div>
             </div>

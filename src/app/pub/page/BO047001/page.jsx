@@ -14,16 +14,16 @@ export default function BO047001() {
     return (
         <DefaultLayout>
             <Topbar
-                title="FAQ관리"
+                title="FAQ 관리"
                 path={[
                     { text: "홈", url: "/" },
                     { text: "전시컨텐츠관리", url: "/" },
-                    { text: "FAQ관리", url: "/" },
+                    { text: "FAQ 관리", url: "/" },
                 ]}
             />
-            <div className="box-cont">
+            <div className="box-cont overflow-y-auto">
                 {/* search box */}
-                <div className="search-box">
+                <div className="search-box relative">
                     <ul>
                         <li className="col-span-2">
                             <p>유형</p>
@@ -57,7 +57,7 @@ export default function BO047001() {
                             </div>
                         </li>
                     </ul>
-                    <div className="search-btn">
+                    <div className="search-btn absolute right-0 bottom-6 mt-0">
                         <Button type="green" size="m">
                             검색
                         </Button>
@@ -66,10 +66,7 @@ export default function BO047001() {
                 {/* //search box */}
 
                 <div className="grow flex flex-col">
-                    <div className="flex justify-between items-center">
-                        <Button type="gray" size="m">
-                            초기화
-                        </Button>
+                    <div className="flex justify-end items-center">
                         <div className="flex items-center gap-2">
                             <Button type="blue" size="m">
                                 저장
@@ -79,31 +76,34 @@ export default function BO047001() {
                             </Button>
                         </div>
                     </div>
-                    <div className="flex items-center min-h-[2.5rem] mt-4">
+                    <div className="flex items-center min-h-[2.5rem] mt-2">
                         <p className="h4">
                             총 <span className="text-green">231</span>건
                         </p>
-                        <div className="grid grid-cols-[9.375rem_9.375rem] gap-2 ml-auto">
-                            <SelectBasic placeholder="최근 등록순" />
-                            <SelectBasic placeholder="50개씩 보기" />
+                        <div className="grid gap-2 ml-auto">
+                            <SelectBasic size="m" placeholder="50개씩 보기" />
                         </div>
                     </div>
-                    <div className="table-grid mt-4">
+                    <div className="table-grid mt-2">
                         <table>
                             <colgroup>
                                 <col width="60px" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="25%" />
+                                <col width="auto" />
+                                <col width="180px" />
                             </colgroup>
                             <thead>
                                 <tr>
-                                    <th scope="col">번호</th>
+                                    <th scope="col">No</th>
                                     <th scope="col">유형</th>
                                     <th scope="col">베스트여부</th>
                                     <th scope="col">사용여부</th>
                                     <th scope="col">제목</th>
                                     <th scope="col">등록자</th>
                                     <th scope="col">등록일시</th>
-                                    <th scope="col">최종수정자</th>
-                                    <th scope="col">최종수정일시</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -118,15 +118,13 @@ export default function BO047001() {
                                     </td>
                                     <td>
                                         <button type="button">
-                                            <p className="underline">
+                                            <p className="underline text-green">
                                                 제목이 노출됩니다
                                             </p>
                                         </button>
                                     </td>
                                     <td>김파프&#40;admin&#41;</td>
                                     <td>2024-10-14 14:38</td>
-                                    <td>-</td>
-                                    <td>-</td>
                                 </tr>
                             </tbody>
                         </table>

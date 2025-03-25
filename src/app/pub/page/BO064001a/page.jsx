@@ -15,17 +15,17 @@ export default function BO064001a() {
     return (
         <DefaultLayout>
             <Topbar
-                title="제보관리"
+                title="제보 관리"
                 tip="주차장정보에 대해 일부 수정 요청하는 수정제보와 APP에 없는 신규 주차장에 대한 제보를 확인하고 관리합니다."
                 path={[
                     { text: "홈", url: "/" },
                     { text: "문의관리", url: "/" },
-                    { text: "제보관리", url: "/" },
+                    { text: "제보 관리", url: "/" },
                 ]}
             />
             <div className="box-cont">
                 {/* search box */}
-                <div className="search-box">
+                <div className="search-box relative">
                     <ul>
                         <li>
                             <p>제보유형</p>
@@ -36,14 +36,15 @@ export default function BO064001a() {
                             </div>
                         </li>
                         <li>
-                            <p>답변</p>
+                            <p>검토 결과</p>
                             <div className="flex items-center gap-3">
-                                <Radio name="t2" label="전체" defaultChecked />
-                                <Radio name="t2" label="Y" />
-                                <Radio name="t2" label="N" />
+                                <Radio name="t3" label="전체" defaultChecked />
+                                <Radio name="t3" label="반영필요" />
+                                <Radio name="t3" label="미반영" />
+                                <Radio name="t3" label="기타" />
                             </div>
                         </li>
-                        <li>
+                        <li className="col-span-2">
                             <p>제보지역</p>
                             <div className="flex items-center gap-2">
                                 <SelectBasic placeholder="전체" size="m" />
@@ -54,14 +55,7 @@ export default function BO064001a() {
                                 />
                             </div>
                         </li>
-                        <li>
-                            <p>검토결과</p>
-                            <div className="flex items-center gap-3">
-                                <Radio name="t3" label="전체" defaultChecked />
-                                <Radio name="t3" label="반영필요" />
-                                <Radio name="t3" label="미반영" />
-                            </div>
-                        </li>
+
                         <li className="col-span-2">
                             <p>검색어</p>
                             <Input placeholder="검색어를 입력하세요" size="l" />
@@ -74,7 +68,7 @@ export default function BO064001a() {
                             </div>
                         </li>
                     </ul>
-                    <div className="search-btn">
+                    <div className="search-btn absolute right-0 bottom-6 mt-0">
                         <Button type="green" size="m">
                             검색
                         </Button>
@@ -87,21 +81,38 @@ export default function BO064001a() {
                         <p className="h4">
                             총 <span className="text-green">231</span>건
                         </p>
+                        <div className="ml-4">
+                            <Button type="outline" size="m">
+                                <IcExcel />
+                                엑셀다운로드
+                            </Button>
+                        </div>
                         <SelectBasic
+                            size="m"
                             placeholder="50개씩 보기"
-                            className="w-[9.375rem] ml-auto"
+                            className="ml-auto"
                         />
                     </div>
                     <div className="table-grid mt-4">
                         <table>
                             <colgroup>
+                                <col width="60px" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="15%" />
+                                <col width="8%" />
+                                <col width="8%" />
                                 <col width="5%" />
+                                <col width="auto" />
+                                <col width="180px" />
+                                <col width="auto" />
+                                <col width="180px" />
+                                <col width="auto" />
+                                <col width="auto" />
                             </colgroup>
                             <thead>
                                 <tr>
-                                    <th scope="col">
-                                        <Checkbox />
-                                    </th>
+                                    <th scope="col">No</th>
                                     <th scope="col">제보접수번호</th>
                                     <th scope="col">제보유형</th>
                                     <th scope="col">주차장명</th>
@@ -118,46 +129,52 @@ export default function BO064001a() {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>
-                                        <Checkbox />
-                                    </td>
+                                    <td>42</td>
                                     <td>
                                         <button type="button">
                                             <span className="underline text-green">
-                                                RM00008
+                                                1075
                                             </span>
                                         </button>
                                     </td>
                                     <td>수정</td>
-                                    <td>
-                                        <p className="line-clamp-2">
-                                            제보된 주차장명 표기 제보된 주차장명
-                                            표기
-                                        </p>
-                                    </td>
+                                    <td>블루베리공유(노외)</td>
                                     <td>서울시</td>
                                     <td>송파구</td>
                                     <td>1장</td>
                                     <td>홍길동</td>
                                     <td>yyyy-mm-dd 00:00</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
+                                    <td>박희선(sunpark)</td>
+                                    <td>yyyy-mm-dd 00:00</td>
+                                    <td>반영필요</td>
+                                    <td>지급</td>
+                                </tr>
+                                <tr>
+                                    <td>43</td>
+                                    <td>
+                                        <button type="button">
+                                            <span className="underline text-green">
+                                                1075
+                                            </span>
+                                        </button>
+                                    </td>
+                                    <td>수정</td>
+                                    <td>블루베리공유(노외)</td>
+                                    <td>서울시</td>
+                                    <td>송파구</td>
+                                    <td>1장</td>
+                                    <td>홍길동</td>
+                                    <td>yyyy-mm-dd 00:00</td>
+                                    <td>박희선(sunpark)</td>
+                                    <td>yyyy-mm-dd 00:00</td>
+                                    <td>반영필요</td>
+                                    <td>지급</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div className="table-bottom">
                         <Paging />
-                        <Button
-                            type="outline"
-                            size="m"
-                            className="justify-self-end"
-                        >
-                            <IcExcel />
-                            엑셀다운로드
-                        </Button>
                     </div>
                 </div>
             </div>

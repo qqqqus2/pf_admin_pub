@@ -13,16 +13,16 @@ export default function BO071004() {
     return (
         <DefaultLayout>
             <Topbar
-                title="주차장 결제관리"
+                title="주차장 결제 관리"
                 path={[
                     { text: "홈", url: "/" },
                     { text: "정산관리", url: "/" },
-                    { text: "주차장 결제관리", url: "/" },
+                    { text: "주차장 결제 관리", url: "/" },
                 ]}
             />
             <div className="box-cont">
                 {/* search box */}
-                <div className="search-box">
+                <div className="search-box relative">
                     <ul>
                         <li>
                             <p>결제일</p>
@@ -61,7 +61,7 @@ export default function BO071004() {
                         </li>
                         <li className="col-span-2">
                             <p>검색어</p>
-                            <div className="flex items-center gap-2">
+                            <div className="flex items-center gap-2 mr-[4.7rem]">
                                 <SelectBasic placeholder="전체" size="m" />
                                 <Input
                                     placeholder="검색어를 입력하세요"
@@ -70,7 +70,7 @@ export default function BO071004() {
                             </div>
                         </li>
                     </ul>
-                    <div className="search-btn">
+                    <div className="search-btn absolute right-0 bottom-6 mt-0">
                         <Button type="green" size="m">
                             검색
                         </Button>
@@ -149,13 +149,34 @@ export default function BO071004() {
                             </tbody>
                         </table>
                     </div>
-                    <div className="flex items-center min-h-[2.5rem] mt-6">
+                </div>
+                <div className="grow flex flex-col">
+                    <div className="flex items-center">
+                        <button
+                            type="button"
+                            className="btn btn-black btn-m ml-auto"
+                        >
+                            확인 요청
+                        </button>
+                    </div>
+                    <div className="flex items-center min-h-[2.5rem] my-2">
                         <p className="h4">
                             총 <span className="text-green">231</span>건
                         </p>
+                        <div className="ml-4">
+                            <Button
+                                type="outline"
+                                size="m"
+                                className="justify-self-end"
+                            >
+                                <IcExcel />
+                                엑셀다운로드
+                            </Button>
+                        </div>
                         <SelectBasic
+                            size="m"
                             placeholder="50개씩 보기"
-                            className="w-[9.375rem] ml-auto"
+                            className="ml-auto"
                         />
                     </div>
                     <div className="table-hscroll mt-4">
@@ -166,70 +187,132 @@ export default function BO071004() {
                                 </colgroup>
                                 <thead>
                                     <tr>
-                                        <th scope="col">
+                                        <th>
                                             <Checkbox />
                                         </th>
-                                        <th scope="col">파트너명</th>
-                                        <th scope="col">배정자명</th>
-                                        <th scope="col">배정자 차량번호</th>
-                                        <th scope="col">배정자 휴대폰번호</th>
-                                        <th scope="col">배정시작일</th>
-                                        <th scope="col">배정종료일</th>
-                                        <th scope="col">주차장명</th>
-                                        <th scope="col" className="">
-                                            주차장상태
-                                        </th>
-                                        <th scope="col" className="">
-                                            주차장종류
-                                        </th>
-                                        <th scope="col" className="">
-                                            결제건수
-                                        </th>
-                                        <th scope="col">수입금액</th>
-                                        <th scope="col">PG수수료</th>
-                                        <th scope="col">유지관리비</th>
-                                        <th scope="col">수익</th>
-                                        <th scope="col">파트너 수익</th>
-                                        <th scope="col">소득세액</th>
-                                        <th scope="col">파트너 지급액</th>
-                                        <th scope="col">배정자 초과금</th>
-                                        <th scope="col">배정자 실 입금금액</th>
-                                        <th scope="col">배정자 한도금액</th>
+                                        <th className="">파트너구분</th>
+                                        <th className="">파트너명</th>
+                                        <th className="">주차권종류</th>
+                                        <th className="">주차권명</th>
+                                        <th className="">배정자명</th>
+                                        <th className="">배정자 차량번호</th>
+                                        <th className="">배정자 휴대폰번호</th>
+                                        <th className="">배정시작일</th>
+                                        <th className="">배정종료일</th>
+                                        <th className="">서비스 게시일</th>
+                                        <th className="">주차장명</th>
+                                        <th className="">주차장상태</th>
+                                        <th className="">주차장종류</th>
+                                        <th className="">계약면수</th>
+                                        <th className="">운영면수</th>
+                                        <th className="">운영율</th>
+                                        <th className="">파트너 정산비율</th>
+                                        <th className="">배정자 정산 비율</th>
+                                        <th className="">소득세 여부</th>
+                                        <th className="">수입금액</th>
+                                        <th className="">매출액</th>
+                                        <th className="">부가세</th>
+                                        <th className="">PG수수료</th>
+                                        <th className="">유지관리비</th>
+                                        <th className="">수익</th>
+                                        <th className="">파트너 수익</th>
+                                        <th className="">소득세액</th>
+                                        <th className="">파트너 지급액</th>
+                                        <th className="">배정자 수익</th>
+                                        <th className="">배정자 초과금</th>
+                                        <th className="">배정자 실 입금금액</th>
+                                        <th className="">PG수수료 면제 여부</th>
+                                        <th className="">배정자 한도금액</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr className="">
                                         <td>
                                             <Checkbox />
                                         </td>
-                                        <td>중구청</td>
-                                        <td>김길동</td>
-                                        <td>29호0900</td>
-                                        <td>01012343456</td>
-                                        <td>2024-11-02</td>
-                                        <td>2024-11-02</td>
-                                        <td>
-                                            <button type="button">
-                                                <span className="underline">
-                                                    중구청
-                                                    구획3-88-0&#40;#1111&#41;
+                                        <td className="">파트너</td>
+                                        <td className="">(주)어반포트</td>
+                                        <td className="">-</td>
+                                        <td className="">-</td>
+                                        <td className="">-</td>
+                                        <td className="">-</td>
+                                        <td className="">-</td>
+                                        <td className="">-</td>
+                                        <td className="">-</td>
+                                        <td className="">2023-03-06</td>
+                                        <td className="">
+                                            <button>
+                                                <span className="underline text-green">
+                                                    삼성동 마에스트로 주차장
                                                 </span>
                                             </button>
                                         </td>
-                                        <td>등록완료</td>
-                                        <td>공유&#40;구획제&#41;</td>
-                                        <td>110</td>
-
-                                        <td>1,100,000</td>
-                                        <td>30,000</td>
-                                        <td>30,000</td>
-                                        <td>1,020,000</td>
-                                        <td>400,000</td>
-                                        <td>-</td>
-                                        <td>400,000</td>
-                                        <td>30,000</td>
-                                        <td>30,000</td>
-                                        <td>30,000</td>
+                                        <td className="">서비스중</td>
+                                        <td className="">일반제휴</td>
+                                        <td className="">15</td>
+                                        <td className="">0</td>
+                                        <td className="">0%</td>
+                                        <td className="">0%</td>
+                                        <td className="">0%</td>
+                                        <td className="">N</td>
+                                        <td className="">0</td>
+                                        <td className="">0</td>
+                                        <td className="">0</td>
+                                        <td className="">0</td>
+                                        <td className="">0</td>
+                                        <td className="">0</td>
+                                        <td className="">0</td>
+                                        <td className="">0</td>
+                                        <td className="">0</td>
+                                        <td className="">0</td>
+                                        <td className="">0</td>
+                                        <td className="">0</td>
+                                        <td className="">Y</td>
+                                        <td className=""></td>
+                                    </tr>
+                                    <tr className="">
+                                        <td>
+                                            <Checkbox />
+                                        </td>
+                                        <td className="">파트너</td>
+                                        <td className="">(주)어반포트</td>
+                                        <td className="">-</td>
+                                        <td className="">-</td>
+                                        <td className="">-</td>
+                                        <td className="">-</td>
+                                        <td className="">-</td>
+                                        <td className="">-</td>
+                                        <td className="">-</td>
+                                        <td className="">2023-03-06</td>
+                                        <td className="">
+                                            <button>
+                                                <span className="underline text-green">
+                                                    삼성동 마에스트로 주차장
+                                                </span>
+                                            </button>
+                                        </td>
+                                        <td className="">서비스중</td>
+                                        <td className="">일반제휴</td>
+                                        <td className="">15</td>
+                                        <td className="">0</td>
+                                        <td className="">0%</td>
+                                        <td className="">0%</td>
+                                        <td className="">0%</td>
+                                        <td className="">N</td>
+                                        <td className="">0</td>
+                                        <td className="">0</td>
+                                        <td className="">0</td>
+                                        <td className="">0</td>
+                                        <td className="">0</td>
+                                        <td className="">0</td>
+                                        <td className="">0</td>
+                                        <td className="">0</td>
+                                        <td className="">0</td>
+                                        <td className="">0</td>
+                                        <td className="">0</td>
+                                        <td className="">0</td>
+                                        <td className="">Y</td>
+                                        <td className=""></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -238,14 +321,6 @@ export default function BO071004() {
 
                     <div className="table-bottom">
                         <Paging />
-                        <Button
-                            type="outline"
-                            size="m"
-                            className="justify-self-end"
-                        >
-                            <IcExcel />
-                            엑셀다운로드
-                        </Button>
                     </div>
                 </div>
             </div>

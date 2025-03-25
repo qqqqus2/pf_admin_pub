@@ -8,31 +8,29 @@ import Checkbox from "@pub/components/Form/Check";
 import SelectBasic from "@pub/components/Form/Select";
 import FormDateRange from "@pub/components/Form/DateRange";
 import IcExcel from "@/assets/icons/ico_excel.svg";
+import Radio from "@pub/components/Form/Radio";
 
 export default function BO091001() {
     return (
         <DefaultLayout>
             <Topbar
-                title="접속이력관리"
+                title="접속 이력 관리"
                 path={[
                     { text: "홈", url: "/" },
                     { text: "이력관리", url: "/" },
-                    { text: "접속이력관리", url: "/" },
+                    { text: "접속 이력 관리", url: "/" },
                 ]}
             />
             <div className="box-cont">
                 {/* search box */}
-                <div className="search-box">
+                <div className="search-box relative">
                     <ul>
                         <li className="col-span-2">
                             <p>구분</p>
-                            <div className="flex items-center gap-2">
-                                <SelectBasic placeholder="전체" size="m" />
-                                <SelectBasic
-                                    placeholder="전체"
-                                    size="m"
-                                    disabled
-                                />
+                            <div className="flex items-center gap-3">
+                                <Radio name="t1" label="전체" defaultChecked />
+                                <Radio name="t1" label="관리자" />
+                                <Radio name="t1" label="파트너" />
                             </div>
                         </li>
                         <li className="col-span-2">
@@ -53,7 +51,7 @@ export default function BO091001() {
                             </div>
                         </li>
                     </ul>
-                    <div className="search-btn">
+                    <div className="search-btn absolute right-0 bottom-6 mt-0">
                         <Button type="green" size="m">
                             검색
                         </Button>
@@ -66,21 +64,36 @@ export default function BO091001() {
                         <p className="h4">
                             총 <span className="text-green">231</span>건
                         </p>
+                        <div className="ml-4">
+                            <Button
+                                type="outline"
+                                size="m"
+                                className="justify-self-end"
+                            >
+                                <IcExcel />
+                                엑셀다운로드
+                            </Button>
+                        </div>
                         <SelectBasic
+                            size="m"
                             placeholder="50개씩 보기"
-                            className="w-[9.375rem] ml-auto"
+                            className="ml-auto"
                         />
                     </div>
-                    <div className="table-grid mt-4">
+                    <div className="table-grid mt-2">
                         <table>
                             <colgroup>
-                                <col width="60px" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="180px" />
+                                <col width="180px" />
                             </colgroup>
                             <thead>
                                 <tr>
-                                    <th scope="col">
-                                        <Checkbox />
-                                    </th>
                                     <th scope="col">구분</th>
                                     <th scope="col">아이디</th>
                                     <th scope="col">이름</th>
@@ -93,13 +106,10 @@ export default function BO091001() {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>
-                                        <Checkbox />
-                                    </td>
                                     <td>관리자</td>
                                     <td>
                                         <button type="button">
-                                            <span className="underline">
+                                            <span className="underline text-green">
                                                 Parking00
                                             </span>
                                         </button>
@@ -116,14 +126,6 @@ export default function BO091001() {
                     </div>
                     <div className="table-bottom">
                         <Paging />
-                        <Button
-                            type="outline"
-                            size="m"
-                            className="justify-self-end"
-                        >
-                            <IcExcel />
-                            엑셀다운로드
-                        </Button>
                     </div>
                 </div>
             </div>
