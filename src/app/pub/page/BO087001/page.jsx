@@ -15,18 +15,18 @@ export default function BO087001() {
     return (
         <DefaultLayout>
             <Topbar
-                title="유의사항관리"
+                title="유의사항 관리"
                 path={[
                     { text: "홈", url: "/" },
-                    { text: "관리자설정관리", url: "/" },
-                    { text: "유의사항관리", url: "/" },
+                    { text: "관리자 설정 관리", url: "/" },
+                    { text: "유의사항 관리", url: "/" },
                 ]}
             />
             <div className="box-cont">
                 {/* search box */}
-                <div className="search-box">
+                <div className="search-box relative">
                     <ul>
-                        <li className="col-span-2">
+                        <li>
                             <p>구분</p>
                             <div className="flex items-center gap-3">
                                 <Checkbox label="전체" defaultChecked />
@@ -37,12 +37,12 @@ export default function BO087001() {
                                 <Checkbox label="기타" />
                             </div>
                         </li>
-                        <li className="col-span-2">
+                        <li>
                             <p>사용여부</p>
                             <div className="flex items-center gap-3">
                                 <Radio name="t1" label="전체" defaultChecked />
-                                <Radio name="t1" label="사용(Y)" />
-                                <Radio name="t1" label="사용안함(N)" />
+                                <Radio name="t1" label="사용" />
+                                <Radio name="t1" label="사용안함" />
                             </div>
                         </li>
                         <li className="col-span-2">
@@ -57,7 +57,7 @@ export default function BO087001() {
                             </div>
                         </li>
                     </ul>
-                    <div className="search-btn">
+                    <div className="search-btn absolute right-0 bottom-6 mt-0">
                         <Button type="green" size="m">
                             검색
                         </Button>
@@ -80,19 +80,26 @@ export default function BO087001() {
                         </div>
                     </div>
 
-                    <div className="flex items-center min-h-[2.5rem] mt-4">
+                    <div className="flex items-center min-h-[2.5rem] mt-2">
                         <p className="h4">
                             총 <span className="text-green">231</span>건
                         </p>
                         <SelectBasic
+                            size="m"
                             placeholder="50개씩 보기"
-                            className="w-[9.375rem] ml-auto"
+                            className="ml-auto"
                         />
                     </div>
-                    <div className="table-grid mt-4">
+                    <div className="table-grid mt-2">
                         <table>
                             <colgroup>
+                                <col width="40px" />
                                 <col width="60px" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="20%" />
+                                <col width="auto" />
+                                <col width="180px" />
                             </colgroup>
                             <thead>
                                 <tr>
@@ -106,8 +113,6 @@ export default function BO087001() {
                                     <th scope="col">제목</th>
                                     <th scope="col">등록자</th>
                                     <th scope="col">등록일시</th>
-                                    <th scope="col">최종수정자</th>
-                                    <th scope="col">최종수정일시</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -123,13 +128,11 @@ export default function BO087001() {
                                     <td>주차장명</td>
                                     <td>
                                         <button type="button">
-                                            <p className="underline">
+                                            <p className="underline text-green">
                                                 제목이 노출됩니다
                                             </p>
                                         </button>
                                     </td>
-                                    <td>김파프&#40;admin&#41;</td>
-                                    <td>2024-10-14 14:38</td>
                                     <td>김파프&#40;admin&#41;</td>
                                     <td>2024-10-14 14:38</td>
                                 </tr>

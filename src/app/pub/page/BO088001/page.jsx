@@ -14,16 +14,16 @@ export default function BO088001() {
     return (
         <DefaultLayout>
             <Topbar
-                title="관리자계정관리"
+                title="관리자 계정 관리"
                 path={[
                     { text: "홈", url: "/" },
-                    { text: "관리자설정관리", url: "/" },
-                    { text: "관리자계정관리", url: "/" },
+                    { text: "관리자 설정 관리", url: "/" },
+                    { text: "관리자 계정 관리", url: "/" },
                 ]}
             />
             <div className="box-cont">
                 {/* search box */}
-                <div className="search-box">
+                <div className="search-box relative">
                     <ul>
                         <li>
                             <p>소속부서</p>
@@ -66,7 +66,7 @@ export default function BO088001() {
                             </div>
                         </li>
                     </ul>
-                    <div className="search-btn">
+                    <div className="search-btn absolute right-0 bottom-6 mt-0">
                         <Button type="green" size="m">
                             검색
                         </Button>
@@ -75,25 +75,43 @@ export default function BO088001() {
                 {/* //search box */}
 
                 <div className="grow flex flex-col">
-                    <div className="flex items-center min-h-[2.5rem] mt-4">
+                    <div className="flex items-center min-h-[2.5rem]">
                         <p className="h4">
                             총 <span className="text-green">231</span>건
                         </p>
+                        <div className="ml-4">
+                            <Button
+                                type="outline"
+                                size="m"
+                                className="justify-self-end"
+                            >
+                                <IcExcel />
+                                엑셀다운로드
+                            </Button>
+                        </div>
                         <SelectBasic
+                            size="m"
                             placeholder="30개씩 보기"
-                            className="w-[9.375rem] ml-auto"
+                            className="ml-auto"
                         />
                     </div>
-                    <div className="table-grid mt-4">
+                    <div className="table-grid mt-2">
                         <table>
                             <colgroup>
-                                <col width="60px" />
+                                <col width="auto" />
+                                <col width="10%" />
+                                <col width="10%" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="180px" />
+                                <col width="180px" />
+                                <col width="140px" />
+                                <col width="10%" />
+                                <col width="180px" />
                             </colgroup>
                             <thead>
                                 <tr>
-                                    <th scope="col">
-                                        <Checkbox />
-                                    </th>
                                     <th scope="col">계정상태</th>
                                     <th scope="col">아이디</th>
                                     <th scope="col">이름</th>
@@ -109,13 +127,10 @@ export default function BO088001() {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>
-                                        <Checkbox />
-                                    </td>
                                     <td>활성</td>
                                     <td>
                                         <button type="button">
-                                            <span className="underline">
+                                            <span className="underline text-green">
                                                 Parking00
                                             </span>
                                         </button>
@@ -135,14 +150,6 @@ export default function BO088001() {
                     </div>
                     <div className="table-bottom">
                         <Paging />
-                        <Button
-                            type="outline"
-                            size="m"
-                            className="justify-self-end"
-                        >
-                            <IcExcel />
-                            엑셀다운로드
-                        </Button>
                     </div>
                 </div>
             </div>

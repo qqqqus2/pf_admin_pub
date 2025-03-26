@@ -14,17 +14,17 @@ export default function BO083001() {
     return (
         <DefaultLayout>
             <Topbar
-                title="공통코드관리"
+                title="공통 코드 관리"
                 tip="공통코드 목록을 확인하고 수정을 합니다. (단, 사용여부는 영향도를 반드시 고려해야 합니다)"
                 path={[
                     { text: "홈", url: "/" },
-                    { text: "관리자설정관리", url: "/" },
-                    { text: "공통코드관리", url: "/" },
+                    { text: "관리자 설정 관리", url: "/" },
+                    { text: "공통 코드 관리", url: "/" },
                 ]}
             />
             <div className="box-cont">
                 {/* search box */}
-                <div className="search-box">
+                <div className="search-box relative">
                     <ul>
                         <li className="col-span-2">
                             <p>사용여부</p>
@@ -46,7 +46,7 @@ export default function BO083001() {
                             </div>
                         </li>
                     </ul>
-                    <div className="search-btn">
+                    <div className="search-btn absolute right-0 bottom-6 mt-0">
                         <Button type="green" size="m">
                             검색
                         </Button>
@@ -55,134 +55,78 @@ export default function BO083001() {
                 {/* //search box */}
 
                 <div className="grow flex flex-col">
-                    <div className="flex justify-between items-center">
-                        <div className="flex items-center gap-2">
-                            <Button type="outline" size="m">
-                                선택미사용
-                            </Button>
-                            <Button type="outline" size="m">
-                                전체미사용
-                            </Button>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <Button type="blue" size="m">
-                                저장
-                            </Button>
-                            <Button type="black" size="m">
-                                등록
-                            </Button>
-                        </div>
+                    <div className="flex justify-end items-center">
+                        <Button type="black" size="m">
+                            등록
+                        </Button>
                     </div>
-                    <div className="flex items-center min-h-[2.5rem] mt-4">
+                    <div className="flex items-center justify-between min-h-[2.5rem] mt-2">
                         <p className="h4">
                             총 <span className="text-green">231</span>건
                         </p>
-                        <div className="grid grid-cols-[9.375rem_9.375rem] gap-2 ml-auto">
-                            <SelectBasic placeholder="최근 등록순" />
-                            <SelectBasic placeholder="50개씩 보기" />
+                        <div className="flex items-center gap-2">
+                            <SelectBasic size="m" placeholder="최근 등록순" />
+                            <SelectBasic size="m" placeholder="50개씩 보기" />
                         </div>
                     </div>
-                    <div className="table-grid mt-4">
+                    <div className="table-grid mt-2">
                         <table>
                             <colgroup>
                                 <col width="60px" />
                             </colgroup>
                             <thead>
                                 <tr>
-                                    <th scope="col">
-                                        <Checkbox />
-                                    </th>
+                                    <th scope="col">No</th>
                                     <th scope="col">사용여부</th>
                                     <th scope="col">코드명&#40;한글&#41;</th>
                                     <th scope="col">코드명&#40;영문&#41;</th>
-                                    <th scope="col">ID</th>
                                     <th scope="col">코드내용</th>
-                                    <th scope="col">정렬</th>
                                     <th scope="col">서브코드수</th>
                                     <th scope="col">등록일자</th>
                                     <th scope="col">저장/수정</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr className="bg-cell-blue">
-                                    <td>
-                                        <Checkbox />
-                                    </td>
+                                <tr>
+                                    <td>11</td>
                                     <td>
                                         <Toggle />
                                     </td>
-                                    <td>
-                                        <Input />
-                                    </td>
-                                    <td>
-                                        <Input />
-                                    </td>
-                                    <td>
-                                        <Input />
-                                    </td>
-                                    <td>
-                                        <Input />
-                                    </td>
-                                    <td>
-                                        <Input />
-                                    </td>
-                                    <td></td>
-                                    <td>2024-10-14</td>
-                                    <td>
-                                        <div className="inline-flex items-center gap-2">
-                                            <Button type="outline" size="s">
-                                                취소
-                                            </Button>
-                                            <Button type="black" size="s">
-                                                저장
-                                            </Button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Checkbox />
-                                    </td>
-                                    <td>
-                                        <Toggle checked={false} />
-                                    </td>
-                                    <td>주차장구분코드</td>
-                                    <td>INFO_UDT_TP_CODE</td>
-                                    <td>02</td>
-                                    <td>전체정보</td>
-                                    <td>2</td>
+                                    <td>한글 그룹 코드명</td>
+                                    <td>testtest</td>
+                                    <td>!!!</td>
                                     <td>
                                         <button type="button">
-                                            <span className="underline">0</span>
+                                            <span className="underline text-green">
+                                                0
+                                            </span>
                                         </button>
                                     </td>
                                     <td>2024-10-14</td>
                                     <td>
-                                        <Button type="black" size="s">
+                                        <Button type="outline" size="s">
                                             수정
                                         </Button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <Checkbox />
-                                    </td>
+                                    <td>12</td>
                                     <td>
                                         <Toggle />
                                     </td>
-                                    <td>회원정보구분코드</td>
-                                    <td>INFO_UDT_TP_CODE</td>
-                                    <td>01</td>
-                                    <td>회원정보</td>
-                                    <td>1</td>
+                                    <td>한글 그룹 코드명</td>
+                                    <td>testtest</td>
+                                    <td>!!!</td>
                                     <td>
                                         <button type="button">
-                                            <span className="underline">0</span>
+                                            <span className="underline text-green">
+                                                0
+                                            </span>
                                         </button>
                                     </td>
                                     <td>2024-10-14</td>
                                     <td>
-                                        <Button type="black" size="s">
+                                        <Button type="outline" size="s">
                                             수정
                                         </Button>
                                     </td>

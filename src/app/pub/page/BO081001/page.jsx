@@ -14,36 +14,33 @@ export default function BO081001() {
     return (
         <DefaultLayout>
             <Topbar
-                title="계정신청관리"
-                tip={`<ul>
-          <li>신청된 계정을 관리할 수 있습니다.</li>
-          <li>승인반려 아이콘 마우스오버시 반려사유가 노출됩니다.</li>
-          </ul>`}
+                title="계정 신청 관리"
+                tip={`신청된 계정을 관리할수 있습니다. 승인반려 아이콘 마우스오버시 반려사유가 노출 됩니다.`}
                 path={[
                     { text: "홈", url: "/" },
                     { text: "관리자설정관리", url: "/" },
-                    { text: "계정신청관리", url: "/" },
+                    { text: "계정 신청 관리", url: "/" },
                 ]}
             />
             <div className="box-cont">
                 {/* search box */}
-                <div className="search-box">
+                <div className="search-box relative">
                     <ul>
                         <li>
                             <p>구분</p>
                             <div className="flex items-center gap-3">
                                 <Radio name="f1" label="전체" defaultChecked />
-                                <Radio name="f1" label="파트너" />
                                 <Radio name="f1" label="관리자" />
+                                <Radio name="f1" label="파트너" />
                             </div>
                         </li>
                         <li>
                             <p>상태</p>
                             <div className="flex items-center gap-3">
-                                <Radio name="f2" label="전체" defaultChecked />
-                                <Radio name="f2" label="승인대기" />
-                                <Radio name="f2" label="승인완료" />
-                                <Radio name="f2" label="승인반려" />
+                                <Checkbox label="전체" defaultChecked />
+                                <Checkbox label="승인대기" />
+                                <Checkbox label="승인완료" />
+                                <Checkbox label="승인반려" />
                             </div>
                         </li>
                         <li className="col-span-2">
@@ -51,7 +48,7 @@ export default function BO081001() {
                             <div className="flex items-center gap-2">
                                 <SelectBasic placeholder="전체" size="m" />
                                 <Input
-                                    placeholder="입력정보"
+                                    placeholder="검색어를 입력하세요."
                                     className="grow"
                                 />
                             </div>
@@ -64,7 +61,7 @@ export default function BO081001() {
                             </div>
                         </li>
                     </ul>
-                    <div className="search-btn">
+                    <div className="search-btn absolute right-0 bottom-6 mt-0">
                         <Button type="green" size="m">
                             검색
                         </Button>
@@ -73,33 +70,31 @@ export default function BO081001() {
                 {/* //search box */}
 
                 <div className="grow flex flex-col">
-                    <div className="flex justify-between items-center">
-                        <Button type="outline" size="m">
-                            선택승인
-                        </Button>
-                        <Button type="black" size="m">
-                            일괄승인
-                        </Button>
-                    </div>
-                    <div className="flex items-center min-h-[2.5rem] mt-4">
+                    <div className="flex items-center min-h-[2.5rem]">
                         <p className="h4">
                             총 <span className="text-green">231</span>건
                         </p>
                         <SelectBasic
                             placeholder="30개씩 보기"
-                            className="w-[9.375rem] ml-auto"
+                            size="m"
+                            className="ml-auto"
                         />
                     </div>
-                    <div className="table-grid mt-4">
+                    <div className="table-grid mt-2">
                         <table>
                             <colgroup>
-                                <col width="60px" />
+                                <col width="8%" />
+                                <col width="8%" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="auto" />
+                                <col width="15%" />
+                                <col width="180px" />
+                                <col width="auto" />
+                                <col width="180px" />
                             </colgroup>
                             <thead>
                                 <tr>
-                                    <th scope="col">
-                                        <Checkbox />
-                                    </th>
                                     <th scope="col">구분</th>
                                     <th scope="col">상태</th>
                                     <th scope="col">아이디</th>
@@ -113,96 +108,96 @@ export default function BO081001() {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>
-                                        <Checkbox />
-                                    </td>
-                                    <td>파트너</td>
-                                    <td>
-                                        <Flag type="gray" label="승인대기" />
-                                    </td>
-                                    <td>
-                                        <button type="button">
-                                            <span className="underline">
-                                                Parking00
-                                            </span>
-                                        </button>
-                                    </td>
-                                    <td>김길동</td>
-                                    <td>010-1234-5678</td>
-                                    <td>사업실</td>
-                                    <td>2024-10-14</td>
-                                    <td>김파프&#40;admin&#41;</td>
-                                    <td>2024-10-14 14:38</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Checkbox />
-                                    </td>
-                                    <td>파트너</td>
-                                    <td>
-                                        <Flag type="blue" label="승인완료" />
-                                    </td>
-                                    <td>
-                                        <button type="button">
-                                            <span className="underline">
-                                                Parking00
-                                            </span>
-                                        </button>
-                                    </td>
-                                    <td>김길동</td>
-                                    <td>010-1234-5678</td>
-                                    <td>사업실</td>
-                                    <td>2024-10-14</td>
-                                    <td>김파프&#40;admin&#41;</td>
-                                    <td>2024-10-14 14:38</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <Checkbox />
-                                    </td>
-                                    <td>파트너</td>
+                                    <td>관리자</td>
                                     <td>
                                         <Flag
-                                            type="red"
-                                            label="승인반려"
-                                            tip="마우스 오버시 반려사유가 노출됩니다."
+                                            type="blue"
+                                            size="s"
+                                            label="승인완료"
                                         />
                                     </td>
                                     <td>
-                                        <button type="button">
-                                            <span className="underline">
-                                                Parking00
+                                        <button>
+                                            <span class="underline text-green">
+                                                sun
                                             </span>
                                         </button>
                                     </td>
-                                    <td>김길동</td>
-                                    <td>010-1234-5678</td>
+                                    <td>박희선정지계정</td>
+                                    <td>01059145820</td>
                                     <td>사업실</td>
-                                    <td>2024-10-14</td>
-                                    <td>김파프&#40;admin&#41;</td>
-                                    <td>2024-10-14 14:38</td>
+                                    <td>2025-03-21 20:48</td>
+                                    <td>박희선(sunpark)</td>
+                                    <td>2025-03-21 20:49</td>
                                 </tr>
                                 <tr>
+                                    <td>관리자</td>
                                     <td>
-                                        <Checkbox />
+                                        <Flag
+                                            type="blue"
+                                            size="s"
+                                            label="승인완료"
+                                        />
                                     </td>
-                                    <td>파트너</td>
                                     <td>
-                                        <Flag type="gray" label="승인대기" />
-                                    </td>
-                                    <td>
-                                        <button type="button">
-                                            <span className="underline">
-                                                Parking00
+                                        <button>
+                                            <span class="underline text-green">
+                                                sun
                                             </span>
                                         </button>
                                     </td>
-                                    <td>김길동</td>
-                                    <td>010-1234-5678</td>
+                                    <td>박희선정지계정</td>
+                                    <td>01059145820</td>
                                     <td>사업실</td>
-                                    <td>2024-10-14</td>
-                                    <td>김파프&#40;admin&#41;</td>
-                                    <td>2024-10-14 14:38</td>
+                                    <td>2025-03-21 20:48</td>
+                                    <td>박희선(sunpark)</td>
+                                    <td>2025-03-21 20:49</td>
+                                </tr>
+                                <tr>
+                                    <td>관리자</td>
+                                    <td>
+                                        <Flag
+                                            type="blue"
+                                            size="s"
+                                            label="승인완료"
+                                        />
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <span class="underline text-green">
+                                                sun
+                                            </span>
+                                        </button>
+                                    </td>
+                                    <td>박희선정지계정</td>
+                                    <td>01059145820</td>
+                                    <td>사업실</td>
+                                    <td>2025-03-21 20:48</td>
+                                    <td>박희선(sunpark)</td>
+                                    <td>2025-03-21 20:49</td>
+                                </tr>
+                                <tr>
+                                    <td>관리자</td>
+                                    <td>
+                                        <Flag
+                                            type="red"
+                                            size="s"
+                                            label="승인반려"
+                                        />
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <span class="underline text-green">
+                                                sun
+                                            </span>
+                                        </button>
+                                    </td>
+                                    <td>박희선정지계정</td>
+                                    <td>01059145820</td>
+                                    <td>사업실</td>
+                                    <td>2025-03-21 20:48</td>
+                                    <td>박희선(sunpark)</td>
+                                    <td>2025-03-21 20:49</td>
                                 </tr>
                             </tbody>
                         </table>

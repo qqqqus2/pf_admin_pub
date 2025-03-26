@@ -588,16 +588,16 @@ export const pubRouter = [
         depth1: "관리자 설정 관리",
         depth2: "계정 신청 관리",
         depth3: "목록",
-        status: "",
+        status: "완료",
     },
-    {
-        path: "/pub/page/BO082001",
-        title: "_관리자설정관리>메뉴권한관리>목록",
-        depth1: "관리자 설정 관리",
-        depth2: "메뉴권한관리",
-        depth3: "목록",
-        status: "",
-    },
+    // {
+    //     path: "/pub/page/BO082001",
+    //     title: "_관리자설정관리>메뉴권한관리>목록",
+    //     depth1: "관리자 설정 관리",
+    //     depth2: "메뉴권한관리",
+    //     depth3: "목록",
+    //     status: "",
+    // },
     // {
     //     path: "/pub/page/BO082001a",
     //     title: "_관리자설정관리>메뉴권한관리>목록",
@@ -611,7 +611,7 @@ export const pubRouter = [
         depth1: "관리자 설정 관리",
         depth2: "공통 코드 관리",
         depth3: "",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO084001",
@@ -619,7 +619,7 @@ export const pubRouter = [
         depth1: "관리자 설정 관리",
         depth2: "APP버전관리",
         depth3: "",
-        status: "",
+        status: "완료",
     },
 
     {
@@ -628,7 +628,7 @@ export const pubRouter = [
         depth1: "관리자 설정 관리",
         depth2: "유의사항관리",
         depth3: "",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO085001",
@@ -636,7 +636,7 @@ export const pubRouter = [
         depth1: "관리자 설정 관리",
         depth2: "운영컨텐츠 관리",
         depth3: "",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/BO088001",
@@ -644,7 +644,7 @@ export const pubRouter = [
         depth1: "관리자 설정 관리",
         depth2: "관리자 계정 관리",
         depth3: "목록",
-        status: "",
+        status: "완료",
     },
     {
         path: "/pub/page/drawer08",
@@ -652,6 +652,6 @@ export const pubRouter = [
         depth1: "관리자 설정 관리",
         depth2: "Drawer & Modal",
         depth3: "",
-        status: "",
+        status: "완료",
     },
 ];
